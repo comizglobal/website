@@ -48,7 +48,7 @@ export async function submitContactForm(
     // Send email with verified domain
     const { data: emailData, error } = await resend.emails.send({
       from: "Comiz Global <automatic@comizglobal.com>",
-      to: ["contact@comizglobal.com"],
+      to: ["contact@comizglobal.com", "comiz.global@gmail.com"],
       replyTo: email,
       subject: `New Inquiry from CoMiz Global Website - ${fullName}`,
       html: `

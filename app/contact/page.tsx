@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { contactFormSchema, type ContactFormData } from '@/lib/validators';
-import { submitContactForm } from '@/app/actions/contact';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { contactFormSchema, type ContactFormData } from "@/lib/validators";
+import { submitContactForm } from "@/app/actions/contact";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Form,
   FormControl,
@@ -14,9 +14,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Mail,
   Phone,
@@ -26,56 +26,59 @@ import {
   XCircle,
   Send,
   Clock,
-  MessageSquare
-} from 'lucide-react';
+  MessageSquare,
+} from "lucide-react";
 
-type SubmissionState = 'idle' | 'loading' | 'success' | 'error';
+type SubmissionState = "idle" | "loading" | "success" | "error";
 
 export default function ContactPage() {
-  const [submissionState, setSubmissionState] = useState<SubmissionState>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [submissionState, setSubmissionState] =
+    useState<SubmissionState>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
-      fullName: '',
-      country: '',
-      email: '',
-      whatsapp: '',
-      message: '',
+      fullName: "",
+      country: "",
+      email: "",
+      whatsapp: "",
+      message: "",
     },
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    setSubmissionState('loading');
-    setErrorMessage('');
+    setSubmissionState("loading");
+    setErrorMessage("");
 
     try {
       const result = await submitContactForm(data);
 
       if (!result.success) {
-        setSubmissionState('error');
+        setSubmissionState("error");
         setErrorMessage(result.message);
 
         setTimeout(() => {
-          setSubmissionState('idle');
+          setSubmissionState("idle");
         }, 5000);
         return;
       }
 
-      setSubmissionState('success');
+      setSubmissionState("success");
       form.reset();
 
       setTimeout(() => {
-        setSubmissionState('idle');
+        setSubmissionState("idle");
       }, 5000);
     } catch (error) {
-      console.error('Form submission error:', error);
-      setSubmissionState('error');
-      setErrorMessage('Failed to send message. Please try again or contact us directly.');
+      console.error("Form submission error:", error);
+      setSubmissionState("error");
+      setErrorMessage(
+        "Failed to send message. Please try again or contact us directly.",
+      );
 
       setTimeout(() => {
-        setSubmissionState('idle');
+        setSubmissionState("idle");
       }, 5000);
     }
   };
@@ -83,31 +86,24 @@ export default function ContactPage() {
   const contactInfo = [
     {
       icon: Mail,
-      title: 'Email',
-      content: 'comiz.global@gmail.com',
-      href: 'mailto:comiz.global@gmail.com',
+      title: "Email",
+      content: "contact@comizglobal.com",
+      href: "mailto:comiz.global@gmail.com",
       isLink: true,
     },
     {
       icon: Phone,
-      title: 'Elioth (Israel)',
-      content: '+972-559755959',
-      href: 'tel:+972559755959',
+      title: "Elioth (Israel)",
+      content: "+972-559755959",
+      href: "tel:+972559755959",
       isLink: true,
     },
     {
       icon: Phone,
-      title: 'Joseph (France)',
-      content: '+33-756830342',
-      href: 'tel:+33756830342',
+      title: "Joseph (France)",
+      content: "+33-756830342",
+      href: "tel:+33756830342",
       isLink: true,
-    },
-    {
-      icon: MapPin,
-      title: 'Operations',
-      content: 'UAE & Israel',
-      href: null,
-      isLink: false,
     },
   ];
 
@@ -128,12 +124,13 @@ export default function ContactPage() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-green-200 mb-8 shadow-sm animate-fade-in-up">
               <MessageSquare className="w-4 h-4 text-green-600" />
-              <span className="text-sm font-medium text-neutral-700">Let&apos;s Connect</span>
+              <span className="text-sm font-medium text-neutral-700">
+                Let&apos;s Connect
+              </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-neutral-900 mb-8 leading-tight animate-fade-in-up animation-delay-200">
-              Get in
-              {' '}
+              Get in{" "}
               <span className="relative inline-block">
                 <span className="text-gradient">Touch</span>
                 <div className="absolute -bottom-2 left-0 right-0 h-3 bg-green-200 opacity-30 -z-10 transform -skew-y-1"></div>
@@ -141,7 +138,8 @@ export default function ContactPage() {
             </h1>
 
             <p className="text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-              Ready to start your sourcing project? Fill out the form or contact us directly. We respond within 24 hours.
+              Ready to start your sourcing project? Fill out the form or contact
+              us directly. We respond within 24 hours.
             </p>
           </div>
         </div>
@@ -154,13 +152,16 @@ export default function ContactPage() {
             {/* Contact Information */}
             <div>
               <div className="inline-block px-4 py-2 bg-green-50 rounded-full mb-4">
-                <span className="text-sm font-semibold text-green-700">Contact Information</span>
+                <span className="text-sm font-semibold text-green-700">
+                  Contact Information
+                </span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
                 We&apos;d Love to Hear From You
               </h2>
               <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-                Reach out through any of the channels below and our team will get back to you promptly.
+                Reach out through any of the channels below and our team will
+                get back to you promptly.
               </p>
 
               {/* Response Time Card */}
@@ -171,8 +172,12 @@ export default function ContactPage() {
                       <Clock className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-white mb-1">Fast Response</h3>
-                      <p className="text-green-100 text-sm">We typically respond within 24 hours</p>
+                      <h3 className="font-semibold text-white mb-1">
+                        Fast Response
+                      </h3>
+                      <p className="text-green-100 text-sm">
+                        We typically respond within 24 hours
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -190,7 +195,9 @@ export default function ContactPage() {
                           <item.icon className="w-5 h-5 text-white" />
                         </div>
                         <div className="flex-1">
-                          <h3 className="font-semibold text-neutral-900 text-sm mb-0.5">{item.title}</h3>
+                          <h3 className="font-semibold text-neutral-900 text-sm mb-0.5">
+                            {item.title}
+                          </h3>
                           {item.isLink ? (
                             <a
                               href={item.href!}
@@ -219,20 +226,29 @@ export default function ContactPage() {
                       <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
                         <Send className="w-5 h-5 text-green-600" />
                       </div>
-                      <h3 className="text-2xl font-bold text-neutral-900">Send us a message</h3>
+                      <h3 className="text-2xl font-bold text-neutral-900">
+                        Send us a message
+                      </h3>
                     </div>
-                    <p className="text-neutral-600">Fill out the form and we&apos;ll be in touch soon</p>
+                    <p className="text-neutral-600">
+                      Fill out the form and we&apos;ll be in touch soon
+                    </p>
                   </div>
 
                   <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+                    <form
+                      onSubmit={form.handleSubmit(onSubmit)}
+                      className="space-y-5"
+                    >
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <FormField
                           control={form.control}
                           name="fullName"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-neutral-700 font-medium">Full Name *</FormLabel>
+                              <FormLabel className="text-neutral-700 font-medium">
+                                Full Name *
+                              </FormLabel>
                               <FormControl>
                                 <Input
                                   placeholder="John Doe"
@@ -250,7 +266,9 @@ export default function ContactPage() {
                           name="country"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-neutral-700 font-medium">Country</FormLabel>
+                              <FormLabel className="text-neutral-700 font-medium">
+                                Country
+                              </FormLabel>
                               <FormControl>
                                 <Input
                                   placeholder="United States"
@@ -270,7 +288,9 @@ export default function ContactPage() {
                           name="email"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-neutral-700 font-medium">Email *</FormLabel>
+                              <FormLabel className="text-neutral-700 font-medium">
+                                Email *
+                              </FormLabel>
                               <FormControl>
                                 <Input
                                   type="email"
@@ -289,7 +309,9 @@ export default function ContactPage() {
                           name="whatsapp"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-neutral-700 font-medium">WhatsApp (Optional)</FormLabel>
+                              <FormLabel className="text-neutral-700 font-medium">
+                                WhatsApp (Optional)
+                              </FormLabel>
                               <FormControl>
                                 <Input
                                   placeholder="+1 234 567 8900"
@@ -308,7 +330,9 @@ export default function ContactPage() {
                         name="message"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-neutral-700 font-medium">Message *</FormLabel>
+                            <FormLabel className="text-neutral-700 font-medium">
+                              Message *
+                            </FormLabel>
                             <FormControl>
                               <Textarea
                                 placeholder="Tell us about your project, product requirements, or any questions you have..."
@@ -324,10 +348,10 @@ export default function ContactPage() {
 
                       <Button
                         type="submit"
-                        disabled={submissionState === 'loading'}
+                        disabled={submissionState === "loading"}
                         className="w-full bg-brand-primary hover:bg-green-700 text-white font-semibold h-14 text-base rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl shimmer-hover group"
                       >
-                        {submissionState === 'loading' ? (
+                        {submissionState === "loading" ? (
                           <>
                             <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                             Sending Message...
@@ -341,28 +365,33 @@ export default function ContactPage() {
                       </Button>
 
                       {/* Success Message */}
-                      {submissionState === 'success' && (
+                      {submissionState === "success" && (
                         <div className="flex items-start gap-3 p-4 bg-green-50 border border-green-200 rounded-xl animate-fade-in-up">
                           <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center shrink-0">
                             <CheckCircle2 className="w-5 h-5 text-green-600" />
                           </div>
                           <div>
-                            <h4 className="font-semibold text-green-800 mb-1">Message Sent!</h4>
+                            <h4 className="font-semibold text-green-800 mb-1">
+                              Message Sent!
+                            </h4>
                             <p className="text-green-700 text-sm">
-                              Thank you for reaching out. We&apos;ll get back to you within 24 hours.
+                              Thank you for reaching out. We&apos;ll get back to
+                              you within 24 hours.
                             </p>
                           </div>
                         </div>
                       )}
 
                       {/* Error Message */}
-                      {submissionState === 'error' && (
+                      {submissionState === "error" && (
                         <div className="flex items-start gap-3 p-4 bg-red-50 border border-red-200 rounded-xl animate-fade-in-up">
                           <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center shrink-0">
                             <XCircle className="w-5 h-5 text-red-600" />
                           </div>
                           <div>
-                            <h4 className="font-semibold text-red-800 mb-1">Something went wrong</h4>
+                            <h4 className="font-semibold text-red-800 mb-1">
+                              Something went wrong
+                            </h4>
                             <p className="text-red-700 text-sm">
                               {errorMessage}
                             </p>
