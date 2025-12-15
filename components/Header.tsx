@@ -38,11 +38,10 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <Image
-              src="/logo.jpeg"
+              src="/logo.png"
               alt="CoMiz Global"
-              width={500}
-              height={500}
-              className="h-20 w-auto object-contain transition-opacity duration-200 group-hover:opacity-80"
+              width={100}
+              height={100}
               priority
             />
           </Link>

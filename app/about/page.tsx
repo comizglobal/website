@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Card, CardContent } from '@/components/ui/card';
+import Link from "next/link";
+import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Target,
   Users,
@@ -11,12 +11,13 @@ import {
   Award,
   TrendingUp,
   Heart,
-  Zap
-} from 'lucide-react';
+  Zap,
+} from "lucide-react";
 
 export const metadata = {
-  title: 'About Us - CoMiz Global',
-  description: 'Learn about CoMiz Global, our mission, values, and the team behind our international trading success.',
+  title: "About Us - CoMiz Global",
+  description:
+    "Learn about CoMiz Global, our mission, values, and the team behind our international trading success.",
 };
 
 export default function AboutPage() {
@@ -38,7 +39,9 @@ export default function AboutPage() {
             {/* Premium Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-green-200 mb-8 shadow-sm animate-fade-in-up">
               <Sparkles className="w-4 h-4 text-green-600" />
-              <span className="text-sm font-medium text-neutral-700">Our Story & Vision</span>
+              <span className="text-sm font-medium text-neutral-700">
+                Our Story & Vision
+              </span>
             </div>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-neutral-900 mb-8 leading-tight animate-fade-in-up animation-delay-200">
@@ -51,9 +54,10 @@ export default function AboutPage() {
             </h1>
 
             <p className="text-xl md:text-2xl text-neutral-600 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-              Building bridges between businesses and the world&apos;s best manufacturers. Excellence through transparency, quality, and partnership.
+              Building bridges between businesses and the world&apos;s best
+              manufacturers. Excellence through transparency, quality, and
+              partnership.
             </p>
-
           </div>
         </div>
       </section>
@@ -67,7 +71,9 @@ export default function AboutPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-block px-4 py-2 bg-green-50 rounded-full mb-4">
-                <span className="text-sm font-semibold text-green-700">What Drives Us</span>
+                <span className="text-sm font-semibold text-green-700">
+                  What Drives Us
+                </span>
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6">
                 Our Mission
@@ -84,7 +90,12 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <p className="text-xl md:text-2xl text-neutral-700 leading-relaxed mb-6">
-                      CoMiz is an international trading company specializing in sourcing, negotiation, and production management across Asia, the Middle East, and Europe. Our mission is to help businesses access the best manufacturers worldwide while securing quality, cost control, and a reliable supply chain.
+                      CoMiz is an international trading company specializing in
+                      sourcing, negotiation, and production management across
+                      Asia, the Middle East, and Europe. Our mission is to help
+                      businesses access the best manufacturers worldwide while
+                      securing quality, cost control, and a reliable supply
+                      chain.
                     </p>
                     <div className="relative p-6 bg-gradient-to-br from-green-50 to-accent-beige/30 rounded-2xl border-l-4 border-green-500">
                       <div className="flex items-start gap-4">
@@ -94,7 +105,9 @@ export default function AboutPage() {
                         </p>
                       </div>
                       <p className="text-base text-neutral-700 mt-4 ml-10">
-                        Every partnership we forge, every supplier we verify, and every shipment we manage reflects our commitment to excellence and transparency.
+                        Every partnership we forge, every supplier we verify,
+                        and every shipment we manage reflects our commitment to
+                        excellence and transparency.
                       </p>
                     </div>
                   </div>
@@ -109,8 +122,12 @@ export default function AboutPage() {
                   <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md transform group-hover:scale-110 transition-transform duration-300">
                     <Globe2 className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-neutral-900 mb-2">Global Network</h3>
-                  <p className="text-sm text-neutral-600">Verified suppliers across three continents</p>
+                  <h3 className="text-lg font-bold text-neutral-900 mb-2">
+                    Global Network
+                  </h3>
+                  <p className="text-sm text-neutral-600">
+                    Verified suppliers across three continents
+                  </p>
                 </CardContent>
               </Card>
 
@@ -119,8 +136,12 @@ export default function AboutPage() {
                   <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md transform group-hover:scale-110 transition-transform duration-300">
                     <Shield className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-neutral-900 mb-2">Full Transparency</h3>
-                  <p className="text-sm text-neutral-600">Clear reporting at every stage</p>
+                  <h3 className="text-lg font-bold text-neutral-900 mb-2">
+                    Full Transparency
+                  </h3>
+                  <p className="text-sm text-neutral-600">
+                    Clear reporting at every stage
+                  </p>
                 </CardContent>
               </Card>
 
@@ -129,8 +150,12 @@ export default function AboutPage() {
                   <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md transform group-hover:scale-110 transition-transform duration-300">
                     <TrendingUp className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-neutral-900 mb-2">Proven Results</h3>
-                  <p className="text-sm text-neutral-600">Track record of successful partnerships</p>
+                  <h3 className="text-lg font-bold text-neutral-900 mb-2">
+                    Proven Results
+                  </h3>
+                  <p className="text-sm text-neutral-600">
+                    Track record of successful partnerships
+                  </p>
                 </CardContent>
               </Card>
             </div>
@@ -146,7 +171,9 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full mb-4 border border-green-200">
-              <span className="text-sm font-semibold text-green-700">What We Stand For</span>
+              <span className="text-sm font-semibold text-green-700">
+                What We Stand For
+              </span>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6">
               Our Core Values
@@ -168,7 +195,8 @@ export default function AboutPage() {
                   Excellence
                 </h3>
                 <p className="text-neutral-600 leading-relaxed">
-                  We pursue the highest standards in every aspect of our service, from supplier verification to final delivery.
+                  We pursue the highest standards in every aspect of our
+                  service, from supplier verification to final delivery.
                 </p>
                 <div className="mt-6 h-1 w-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
               </CardContent>
@@ -185,7 +213,8 @@ export default function AboutPage() {
                   Integrity
                 </h3>
                 <p className="text-neutral-600 leading-relaxed">
-                  Full transparency from first quotation to final delivery. Our word is our bond, and honesty is non-negotiable.
+                  Full transparency from first quotation to final delivery. Our
+                  word is our bond, and honesty is non-negotiable.
                 </p>
                 <div className="mt-6 h-1 w-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
               </CardContent>
@@ -202,7 +231,8 @@ export default function AboutPage() {
                   Partnership
                 </h3>
                 <p className="text-neutral-600 leading-relaxed">
-                  We build long-term relationships based on mutual success, trust, and continuous improvement.
+                  We build long-term relationships based on mutual success,
+                  trust, and continuous improvement.
                 </p>
                 <div className="mt-6 h-1 w-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
               </CardContent>
@@ -219,7 +249,8 @@ export default function AboutPage() {
                   Global Vision
                 </h3>
                 <p className="text-neutral-600 leading-relaxed">
-                  We leverage our international network to bring you the best opportunities from around the world.
+                  We leverage our international network to bring you the best
+                  opportunities from around the world.
                 </p>
                 <div className="mt-6 h-1 w-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
               </CardContent>
@@ -236,7 +267,9 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-2 bg-green-50 rounded-full mb-4">
-              <span className="text-sm font-semibold text-green-700">Leadership Team</span>
+              <span className="text-sm font-semibold text-green-700">
+                Leadership Team
+              </span>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6">
               Meet Our Founders
@@ -262,31 +295,37 @@ export default function AboutPage() {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="absolute -bottom-3 -right-3 w-14 h-14 bg-gradient-to-br from-green-400 to-green-500 rounded-xl flex items-center justify-center shadow-lg">
-                      <Sparkles className="w-6 h-6 text-white" />
-                    </div>
                   </div>
 
                   <h3 className="text-3xl font-bold text-neutral-900 mb-2 group-hover:text-green-700 transition-colors duration-300">
                     Joseph Cohen
                   </h3>
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 rounded-full mb-8">
-                    <Heart className="w-4 h-4 text-green-600" />
-                    <span className="text-green-700 font-semibold text-sm">Co-Founder</span>
+                    <span className="text-green-700 font-semibold text-sm">
+                      Co-Founder
+                    </span>
                   </div>
 
                   <div className="text-left space-y-4">
                     <p className="text-neutral-700 leading-relaxed">
-                      Joseph Cohen co-founded CoMiz with the ambition of helping entrepreneurs achieve their goals in the import-export industry by connecting them with reliable, high-quality suppliers across Asia, Europe, and the Middle East.
+                      Joseph Cohen co-founded CoMiz with the ambition of helping
+                      entrepreneurs achieve their goals in the import-export
+                      industry by connecting them with reliable, high-quality
+                      suppliers across Asia, Europe, and the Middle East.
                     </p>
                     <p className="text-neutral-700 leading-relaxed">
-                      He brings a strong interest in global trade, buy-sell strategy, and negotiation, strengthened by an international background, as well as several experiences in finance.
+                      He brings a strong interest in global trade, buy-sell
+                      strategy, and negotiation, strengthened by an
+                      international background, as well as several experiences
+                      in finance.
                     </p>
                     <div className="relative p-5 bg-gradient-to-br from-green-50 to-accent-beige/30 rounded-xl border-l-4 border-green-500">
                       <div className="flex items-start gap-3">
                         <Zap className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
                         <p className="text-neutral-700 leading-relaxed text-sm">
-                          Developing expertise in entrepreneurship, automation, AI, and no-code solutions to optimize clients&apos; operations and accelerate their growth.
+                          Developing expertise in entrepreneurship, automation,
+                          AI, and no-code solutions to optimize clients&apos;
+                          operations and accelerate their growth.
                         </p>
                       </div>
                     </div>
@@ -310,31 +349,35 @@ export default function AboutPage() {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="absolute -bottom-3 -right-3 w-14 h-14 bg-gradient-to-br from-green-400 to-green-500 rounded-xl flex items-center justify-center shadow-lg">
-                      <Sparkles className="w-6 h-6 text-white" />
-                    </div>
                   </div>
 
                   <h3 className="text-3xl font-bold text-neutral-900 mb-2 group-hover:text-green-700 transition-colors duration-300">
                     Elioth Mizrahi
                   </h3>
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 rounded-full mb-8">
-                    <Heart className="w-4 h-4 text-green-600" />
-                    <span className="text-green-700 font-semibold text-sm">Co-Founder</span>
+                    <span className="text-green-700 font-semibold text-sm">
+                      Co-Founder
+                    </span>
                   </div>
 
                   <div className="text-left space-y-4">
                     <p className="text-neutral-700 leading-relaxed">
-                      Elioth Mizrahi is the Co-Founder of CoMiz Global, bringing a strong interest in global trade, negotiation, and international sourcing.
+                      Elioth Mizrahi is the Co-Founder of CoMiz Global, bringing
+                      a strong interest in global trade, negotiation, and
+                      international sourcing.
                     </p>
                     <p className="text-neutral-700 leading-relaxed">
-                      He co-created the company with the ambition to connect businesses worldwide with reliable, high-quality manufacturers across Asia, Europe, and the Middle East.
+                      He co-created the company with the ambition to connect
+                      businesses worldwide with reliable, high-quality
+                      manufacturers across Asia, Europe, and the Middle East.
                     </p>
                     <div className="relative p-5 bg-gradient-to-br from-green-50 to-accent-beige/30 rounded-xl border-l-4 border-green-500">
                       <div className="flex items-start gap-3">
                         <Award className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
                         <p className="text-neutral-700 leading-relaxed text-sm">
-                          Expertise strengthened by studies at Reichman University, developing knowledge in entrepreneurship, business strategy, and innovation.
+                          Expertise strengthened by studies at Reichman
+                          University, developing knowledge in entrepreneurship,
+                          business strategy, and innovation.
                         </p>
                       </div>
                     </div>
@@ -362,11 +405,16 @@ export default function AboutPage() {
             </h2>
 
             <p className="text-lg md:text-xl text-neutral-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-              All legal documents and company registration papers are available upon request. We believe in complete transparency and building relationships based on trust.
+              All legal documents and company registration papers are available
+              upon request. We believe in complete transparency and building
+              relationships based on trust.
             </p>
 
             <div className="pt-4">
-              <Link href="/contact" className="text-green-600 hover:text-green-700 font-semibold inline-flex items-center gap-2 text-lg">
+              <Link
+                href="/contact"
+                className="text-green-600 hover:text-green-700 font-semibold inline-flex items-center gap-2 text-lg"
+              >
                 Get in touch
                 <ArrowRight className="w-5 h-5" />
               </Link>

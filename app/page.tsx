@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   ArrowRight,
   Globe2,
@@ -9,37 +9,41 @@ import {
   TruckIcon,
   Search,
   CheckCircle2,
-  Sparkles
-} from 'lucide-react';
+  Sparkles,
+} from "lucide-react";
 
 export default function HomePage() {
   const features = [
     {
       icon: Search,
-      title: 'Sourcing & Procurement',
-      description: 'Direct access to verified manufacturers across China and Asia with comprehensive supplier vetting.',
+      title: "Sourcing & Procurement",
+      description:
+        "Direct access to verified manufacturers across China and Asia with comprehensive supplier vetting.",
     },
     {
       icon: Shield,
-      title: 'Quality Assurance',
-      description: 'Multi-stage inspections and quality control to ensure products meet your exact specifications.',
+      title: "Quality Assurance",
+      description:
+        "Multi-stage inspections and quality control to ensure products meet your exact specifications.",
     },
     {
       icon: TruckIcon,
-      title: 'Logistics Management',
-      description: 'End-to-end shipping coordination from factory to your destination across multiple continents.',
+      title: "Logistics Management",
+      description:
+        "End-to-end shipping coordination from factory to your destination across multiple continents.",
     },
     {
       icon: Globe2,
-      title: 'Global Network',
-      description: 'Operations spanning Middle East, Israel, and Europe with local expertise in each market.',
+      title: "Global Network",
+      description:
+        "Operations spanning Middle East, Israel, and Europe with local expertise in each market.",
     },
   ];
 
   const stats = [
-    { value: '3+', label: 'Continents Served' },
-    { value: '100%', label: 'Transparency' },
-    { value: '24h', label: 'Response Time' },
+    { value: "3+", label: "Continents Served" },
+    { value: "100%", label: "Transparency" },
+    { value: "24h", label: "Response Time" },
   ];
 
   return (
@@ -60,7 +64,9 @@ export default function HomePage() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-green-200 mb-8 shadow-sm animate-fade-in-up">
               <Sparkles className="w-4 h-4 text-green-600" />
-              <span className="text-sm font-medium text-neutral-700">Global Sourcing Excellence</span>
+              <span className="text-sm font-medium text-neutral-700">
+                Global Sourcing Excellence
+              </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-neutral-900 mb-8 leading-tight animate-fade-in-up animation-delay-200">
@@ -78,7 +84,7 @@ export default function HomePage() {
 
             {/* Region Pills */}
             <div className="flex flex-wrap justify-center gap-3 mb-10 animate-fade-in-up animation-delay-400">
-              {['China', 'Middle East', 'Israel', 'Europe'].map((region) => (
+              {["China", "Middle East", "Israel", "Europe"].map((region) => (
                 <span
                   key={region}
                   className="px-4 py-2 bg-white/60 backdrop-blur-sm border border-green-200/50 rounded-full text-sm font-medium text-neutral-700"
@@ -121,7 +127,9 @@ export default function HomePage() {
             <div className="grid grid-cols-3 gap-8">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-gradient mb-1">{stat.value}</div>
+                  <div className="text-3xl md:text-4xl font-bold text-gradient mb-1">
+                    {stat.value}
+                  </div>
                   <div className="text-sm text-neutral-600">{stat.label}</div>
                 </div>
               ))}
@@ -136,13 +144,16 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <div className="inline-block px-4 py-2 bg-green-50 rounded-full mb-4">
-                <span className="text-sm font-semibold text-green-700">What We Offer</span>
+                <span className="text-sm font-semibold text-green-700">
+                  What We Offer
+                </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
                 Complete Trade Solutions
               </h2>
               <p className="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-                From factory sourcing to final delivery, we manage every step of your international trade journey.
+                From factory sourcing to final delivery, we manage every step of
+                your international trade journey.
               </p>
             </div>
 
@@ -194,7 +205,9 @@ export default function HomePage() {
               {/* Content */}
               <div>
                 <div className="inline-block px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full mb-4 border border-green-200">
-                  <span className="text-sm font-semibold text-green-700">Why Choose Us</span>
+                  <span className="text-sm font-semibold text-green-700">
+                    Why Choose Us
+                  </span>
                 </div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
                   Your Trusted Partner in Global Trade
@@ -202,22 +215,20 @@ export default function HomePage() {
                 <p className="text-xl text-neutral-700 mb-4 leading-relaxed font-medium">
                   The right partnership makes everything possible.
                 </p>
-                <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-                  CoMiz Global specializes in international trade between China, Middle East, Israel, and Europe. Since 2020, we&apos;ve been providing sourcing, quality control, and logistics services for businesses looking to import products from Asian manufacturers.
-                </p>
-
                 <div className="space-y-4 mb-8">
                   {[
-                    'Direct manufacturer connections',
-                    'Comprehensive quality control',
-                    'Transparent pricing & reporting',
-                    'End-to-end logistics support',
+                    "Verified Suppliers Only — audits, factory visits, background checks, full compliance",
+                    "Transparent Communication — clear reporting at every stage",
+                    "Quality First — systematic inspections, international standards",
+                    "On-Time Delivery — efficient supply chain coverage across Asia, Europe, and the Middle East",
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-3">
                       <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                         <CheckCircle2 className="w-4 h-4 text-green-600" />
                       </div>
-                      <span className="text-neutral-700 font-medium">{item}</span>
+                      <span className="text-neutral-700 font-medium">
+                        {item}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -242,10 +253,11 @@ export default function HomePage() {
                         Global Network
                       </h3>
                       <p className="text-green-100 mb-6 leading-relaxed">
-                        Operations in UAE & Israel with verified suppliers across Asia, Middle East & Europe.
+                        Operations in UAE & Israel with verified suppliers
+                        across Asia, Middle East & Europe.
                       </p>
                       <div className="flex flex-wrap justify-center gap-2">
-                        {['China', 'UAE', 'Israel', 'France'].map((country) => (
+                        {["China", "UAE", "Israel", "France"].map((country) => (
                           <span
                             key={country}
                             className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-sm text-green-100"
@@ -275,16 +287,24 @@ export default function HomePage() {
               {/* Content */}
               <div>
                 <div className="inline-block px-4 py-2 bg-green-50 rounded-full mb-4">
-                  <span className="text-sm font-semibold text-green-700">Meet the Founders</span>
+                  <span className="text-sm font-semibold text-green-700">
+                    Meet the Founders
+                  </span>
                 </div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
                   Leadership Driven by Passion
                 </h2>
                 <p className="text-lg text-neutral-600 mb-6 leading-relaxed">
-                  CoMiz Global was founded by Joseph Cohen and Elioth Mizrahi with a shared vision: to revolutionize international trade by connecting businesses with the world&apos;s best manufacturers.
+                  CoMiz Global was founded by Joseph Cohen and Elioth Mizrahi
+                  with a shared vision: to revolutionize international trade by
+                  connecting businesses with the world&apos;s best
+                  manufacturers.
                 </p>
                 <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-                  With expertise spanning global trade, negotiation, finance, and business strategy, our founders bring a unique blend of international experience and entrepreneurial drive to every partnership.
+                  With expertise spanning global trade, negotiation, finance,
+                  and business strategy, our founders bring a unique blend of
+                  international experience and entrepreneurial drive to every
+                  partnership.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -320,9 +340,15 @@ export default function HomePage() {
                               className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                             />
                           </div>
-                          <h3 className="text-lg font-bold text-neutral-900 mb-1">Joseph Cohen</h3>
-                          <p className="text-sm text-green-600 font-semibold">Co-Founder</p>
-                          <p className="text-xs text-neutral-600 mt-2">France</p>
+                          <h3 className="text-lg font-bold text-neutral-900 mb-1">
+                            Joseph Cohen
+                          </h3>
+                          <p className="text-sm text-green-600 font-semibold">
+                            Co-Founder
+                          </p>
+                          <p className="text-xs text-neutral-600 mt-2">
+                            France
+                          </p>
                         </CardContent>
                       </Card>
                     </div>
@@ -343,9 +369,15 @@ export default function HomePage() {
                               className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                             />
                           </div>
-                          <h3 className="text-lg font-bold text-neutral-900 mb-1">Elioth Mizrahi</h3>
-                          <p className="text-sm text-green-600 font-semibold">Co-Founder</p>
-                          <p className="text-xs text-neutral-600 mt-2">Israel</p>
+                          <h3 className="text-lg font-bold text-neutral-900 mb-1">
+                            Elioth Mizrahi
+                          </h3>
+                          <p className="text-sm text-green-600 font-semibold">
+                            Co-Founder
+                          </p>
+                          <p className="text-xs text-neutral-600 mt-2">
+                            Israel
+                          </p>
                         </CardContent>
                       </Card>
                     </div>
@@ -371,7 +403,8 @@ export default function HomePage() {
                   Ready to Start Your Sourcing Project?
                 </h2>
                 <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
-                  Get in touch with our team to discuss your requirements. We respond within 24 hours.
+                  Get in touch with our team to discuss your requirements. We
+                  respond within 24 hours.
                 </p>
                 <Link href="/contact">
                   <Button
