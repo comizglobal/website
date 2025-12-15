@@ -1,22 +1,21 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Mail, Phone, ArrowRight, Globe2 } from 'lucide-react';
+import Link from "next/link";
+import { Mail, Phone, ArrowRight, Globe2 } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About Us' },
-    { href: '/services', label: 'Services' },
-    { href: '/contact', label: 'Contact' },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About Us" },
+    { href: "/services", label: "Services" },
+    { href: "/contact", label: "Contact" },
   ];
 
   const services = [
-    'Sourcing & Procurement',
-    'Quality Control',
-    'Production Management',
-    'Logistics & Delivery',
+    "Sourcing & Procurement",
+    "Quality Control",
+    "Production Management",
+    "Logistics & Delivery",
   ];
 
   return (
@@ -32,8 +31,9 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block group mb-6">
               <h3 className="text-2xl font-bold">
-                <span className="text-white group-hover:text-green-300 transition-colors">CoMiz</span>
-                {' '}
+                <span className="text-white group-hover:text-green-300 transition-colors">
+                  CoMiz
+                </span>{" "}
                 <span className="text-green-400">Global</span>
               </h3>
             </Link>
@@ -48,7 +48,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 flex items-center gap-2">
+            <h4 className="text-lg font-semibold mb-6 flex items-center gap-2 text-white">
               <span className="w-8 h-0.5 bg-green-500 rounded-full"></span>
               Quick Links
             </h4>
@@ -69,7 +69,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 flex items-center gap-2">
+            <h4 className="text-lg font-semibold mb-6 flex items-center gap-2 text-white">
               <span className="w-8 h-0.5 bg-green-500 rounded-full"></span>
               Services
             </h4>
@@ -90,7 +90,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 flex items-center gap-2">
+            <h4 className="text-lg font-semibold mb-6 flex items-center gap-2 text-white">
               <span className="w-8 h-0.5 bg-green-500 rounded-full"></span>
               Get in Touch
             </h4>
@@ -104,7 +104,9 @@ export default function Footer() {
                     <Mail className="w-4 h-4 text-green-400" />
                   </div>
                   <div>
-                    <span className="text-xs text-green-400 block mb-0.5">Email</span>
+                    <span className="text-xs text-green-400 block mb-0.5">
+                      Email
+                    </span>
                     <span className="text-sm">comiz.global@gmail.com</span>
                   </div>
                 </a>
@@ -118,7 +120,9 @@ export default function Footer() {
                     <Phone className="w-4 h-4 text-green-400" />
                   </div>
                   <div>
-                    <span className="text-xs text-green-400 block mb-0.5">Elioth (Israel)</span>
+                    <span className="text-xs text-green-400 block mb-0.5">
+                      Elioth (Israel)
+                    </span>
                     <span className="text-sm">+972-559755959</span>
                   </div>
                 </a>
@@ -132,7 +136,9 @@ export default function Footer() {
                     <Phone className="w-4 h-4 text-green-400" />
                   </div>
                   <div>
-                    <span className="text-xs text-green-400 block mb-0.5">Joseph (France)</span>
+                    <span className="text-xs text-green-400 block mb-0.5">
+                      Joseph (France)
+                    </span>
                     <span className="text-sm">+33-756830342</span>
                   </div>
                 </a>
@@ -150,7 +156,7 @@ export default function Footer() {
               © {currentYear} CoMiz Global. All rights reserved.
             </p>
             <p className="text-green-200 text-sm flex items-center gap-2">
-              Made with care by{' '}
+              Made with care by{" "}
               <span className="text-green-400 font-semibold hover:text-green-300 transition-colors">
                 Sitekept
               </span>
