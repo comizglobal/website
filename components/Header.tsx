@@ -1,9 +1,10 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
-import { usePathname } from 'next/navigation';
+import Link from "next/link";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import { Menu, X, ArrowRight } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,33 +15,36 @@ export default function Header() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/services', label: 'Services' },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-100'
-          : 'bg-white/80 backdrop-blur-sm border-b border-transparent'
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-100"
+          : "bg-white/80 backdrop-blur-sm border-b border-transparent"
       }`}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
-            <span className="text-2xl md:text-3xl font-bold">
-              <span className="text-brand-primary group-hover:text-green-700 transition-colors duration-200">CoMiz</span>
-              {' '}
-              <span className="text-gradient">Global</span>
-            </span>
+          <Link href="/" className="flex items-center gap-3 group">
+            <Image
+              src="/logo.jpeg"
+              alt="CoMiz Global"
+              width={500}
+              height={500}
+              className="h-20 w-auto object-contain transition-opacity duration-200 group-hover:opacity-80"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -53,8 +57,8 @@ export default function Header() {
                   href={link.href}
                   className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
                     isActive
-                      ? 'text-green-700 bg-green-50'
-                      : 'text-neutral-600 hover:text-green-700 hover:bg-green-50/50'
+                      ? "text-green-700 bg-green-50"
+                      : "text-neutral-600 hover:text-green-700 hover:bg-green-50/50"
                   }`}
                 >
                   {link.label}
@@ -97,8 +101,8 @@ export default function Header() {
                     href={link.href}
                     className={`px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
                       isActive
-                        ? 'text-green-700 bg-green-50'
-                        : 'text-neutral-700 hover:text-green-600 hover:bg-green-50/50'
+                        ? "text-green-700 bg-green-50"
+                        : "text-neutral-700 hover:text-green-600 hover:bg-green-50/50"
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
