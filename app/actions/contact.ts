@@ -44,14 +44,11 @@ export async function submitContactForm(
     const { fullName, country, email, whatsapp, message } = validation.data;
 
     console.log("📧 Attempting to send email via Resend...");
-    console.log("From:", "onboarding@resend.dev");
-    console.log("To:", "comiz.global@gmail.com");
-    console.log("Reply-To:", email);
 
     // Send email with verified domain
     const { data: emailData, error } = await resend.emails.send({
       from: "Comiz Global <no-reply@comizglobal.com>",
-      to: ["comiz.global@gmail.com"],
+      to: ["contact@comizglobal.com"],
       replyTo: email,
       subject: `New Inquiry from CoMiz Global Website - ${fullName}`,
       html: `
