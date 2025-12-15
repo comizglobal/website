@@ -263,6 +263,104 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Founders Section */}
+      <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+        {/* Background Decoration */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-green-100 rounded-full filter blur-3xl opacity-20"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-beige rounded-full filter blur-3xl opacity-20"></div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Content */}
+              <div>
+                <div className="inline-block px-4 py-2 bg-green-50 rounded-full mb-4">
+                  <span className="text-sm font-semibold text-green-700">Meet the Founders</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
+                  Leadership Driven by Passion
+                </h2>
+                <p className="text-lg text-neutral-600 mb-6 leading-relaxed">
+                  CoMiz Global was founded by Joseph Cohen and Elioth Mizrahi with a shared vision: to revolutionize international trade by connecting businesses with the world&apos;s best manufacturers.
+                </p>
+                <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
+                  With expertise spanning global trade, negotiation, finance, and business strategy, our founders bring a unique blend of international experience and entrepreneurial drive to every partnership.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link href="/about">
+                    <Button
+                      size="lg"
+                      className="bg-brand-primary hover:bg-green-700 text-white font-semibold px-8 py-6 text-base rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl shimmer-hover group w-full sm:w-auto"
+                    >
+                      <span className="flex items-center gap-2 justify-center">
+                        Learn About Our Story
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Founders Images */}
+              <div className="relative">
+                <div className="grid grid-cols-2 gap-6">
+                  {/* Joseph Cohen */}
+                  <div className="group">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl transform rotate-3 opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+                      <Card className="relative border-0 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden hover:-translate-y-2">
+                        <CardContent className="p-6">
+                          <div className="aspect-square rounded-2xl overflow-hidden mb-4">
+                            <Image
+                              src="/jospeh.jpeg"
+                              alt="Joseph Cohen - Co-Founder"
+                              width={300}
+                              height={300}
+                              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                            />
+                          </div>
+                          <h3 className="text-lg font-bold text-neutral-900 mb-1">Joseph Cohen</h3>
+                          <p className="text-sm text-green-600 font-semibold">Co-Founder</p>
+                          <p className="text-xs text-neutral-600 mt-2">France</p>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </div>
+
+                  {/* Elioth Mizrahi */}
+                  <div className="group mt-8">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl transform -rotate-3 opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+                      <Card className="relative border-0 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden hover:-translate-y-2">
+                        <CardContent className="p-6">
+                          <div className="aspect-square rounded-2xl overflow-hidden mb-4">
+                            <Image
+                              src="/elioth.jpeg"
+                              alt="Elioth Mizrahi - Co-Founder"
+                              width={300}
+                              height={300}
+                              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                            />
+                          </div>
+                          <h3 className="text-lg font-bold text-neutral-900 mb-1">Elioth Mizrahi</h3>
+                          <p className="text-sm text-green-600 font-semibold">Co-Founder</p>
+                          <p className="text-xs text-neutral-600 mt-2">Israel</p>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Decorative Element */}
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-green-200 rounded-full opacity-40 animate-float"></div>
+                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-accent-beige rounded-full opacity-40 animate-blob"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
