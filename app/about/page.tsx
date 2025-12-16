@@ -6,11 +6,9 @@ import {
   Users,
   Shield,
   Globe2,
-  Sparkles,
   ArrowRight,
   Award,
   TrendingUp,
-  Heart,
   Zap,
 } from "lucide-react";
 
@@ -36,15 +34,7 @@ export default function AboutPage() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
-            {/* Premium Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-green-200 mb-8 shadow-sm animate-fade-in-up">
-              <Sparkles className="w-4 h-4 text-green-600" />
-              <span className="text-sm font-medium text-neutral-700">
-                Our Story & Vision
-              </span>
-            </div>
-
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-neutral-900 mb-8 leading-tight animate-fade-in-up animation-delay-200">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl  font-bold text-neutral-900 mb-8 leading-tight animate-fade-in-up animation-delay-200">
               About CoMiz
               <br />
               <span className="relative inline-block">
@@ -54,9 +44,9 @@ export default function AboutPage() {
             </h1>
 
             <p className="text-xl md:text-2xl text-neutral-600 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-              Building bridges between businesses and the world&apos;s best
-              manufacturers. Excellence through transparency, quality, and
-              partnership.
+              We secure your operations at every step. Building bridges between
+              businesses and verified manufacturers while eliminating sourcing
+              risks before they impact you.
             </p>
           </div>
         </div>
@@ -70,8 +60,8 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <div className="inline-block px-4 py-2 bg-green-50 rounded-full mb-4">
-                <span className="text-sm font-semibold text-green-700">
+              <div className="mb-4">
+                <span className="text-sm font-semibold text-neutral-500 uppercase tracking-wider">
                   What Drives Us
                 </span>
               </div>
@@ -81,25 +71,26 @@ export default function AboutPage() {
             </div>
 
             {/* Mission Statement Card */}
-            <Card className="group relative border-0 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden bg-gradient-to-br from-white via-green-50/30 to-white mb-12">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <Card className="group relative border-0 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden bg-gradient-to-br from-white via-[#1C4332]/5 to-white mb-12">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#1C4332]/0 to-[#1C4332]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardContent className="p-10 md:p-12 relative z-10">
-                <div className="flex items-start gap-6 mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center shrink-0 shadow-lg">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8 text-center md:text-left">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#1C4332] to-[#1C4332] rounded-2xl flex items-center justify-center shrink-0 shadow-lg">
                     <Target className="w-8 h-8 text-white" />
                   </div>
                   <div>
                     <p className="text-xl md:text-2xl text-neutral-700 leading-relaxed mb-6">
                       CoMiz is an international trading company specializing in
                       sourcing, negotiation, and production management across
-                      Asia, the Middle East, and Europe. Our mission is to help
-                      businesses access the best manufacturers worldwide while
-                      securing quality, cost control, and a reliable supply
-                      chain.
+                      Asia, the Middle East, and Europe. Our mission is to
+                      secure your operations by identifying and eliminating
+                      sourcing risks before they impact your business—ensuring
+                      quality, cost control, and a reliable supply chain from
+                      factory verification to final delivery.
                     </p>
-                    <div className="relative p-6 bg-gradient-to-br from-green-50 to-accent-beige/30 rounded-2xl border-l-4 border-green-500">
+                    <div className="relative p-6 bg-gradient-to-br from-[#1C4332]/5 to-accent-beige/30 rounded-2xl border-l-4 border-[#1C4332]">
                       <div className="flex items-start gap-4">
-                        <Award className="w-6 h-6 text-green-600 shrink-0 mt-1" />
+                        <Award className="w-6 h-6 text-[#1C4332] shrink-0 mt-1" />
                         <p className="text-lg md:text-xl text-neutral-900 font-semibold leading-relaxed">
                           Quality is never an accident - it&apos;s a process.
                         </p>
@@ -117,9 +108,9 @@ export default function AboutPage() {
 
             {/* Quick Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="group relative border-0 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden bg-gradient-to-br from-white to-green-50/20 hover:-translate-y-1">
+              <Card className="group relative border-0 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden bg-gradient-to-br from-white to-[#1C4332]/5 hover:-translate-y-1">
                 <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md transform group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#1C4332] to-[#1C4332] rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md transform group-hover:scale-110 transition-transform duration-300">
                     <Globe2 className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-neutral-900 mb-2">
@@ -131,9 +122,9 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
 
-              <Card className="group relative border-0 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden bg-gradient-to-br from-white to-green-50/20 hover:-translate-y-1">
+              <Card className="group relative border-0 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden bg-gradient-to-br from-white to-[#1C4332]/5 hover:-translate-y-1">
                 <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md transform group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#1C4332] to-[#1C4332] rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md transform group-hover:scale-110 transition-transform duration-300">
                     <Shield className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-neutral-900 mb-2">
@@ -145,9 +136,9 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
 
-              <Card className="group relative border-0 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden bg-gradient-to-br from-white to-green-50/20 hover:-translate-y-1">
+              <Card className="group relative border-0 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden bg-gradient-to-br from-white to-[#1C4332]/5 hover:-translate-y-1">
                 <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md transform group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#1C4332] to-[#1C4332] rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md transform group-hover:scale-110 transition-transform duration-300">
                     <TrendingUp className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-neutral-900 mb-2">
@@ -179,7 +170,8 @@ export default function AboutPage() {
               Our Core Values
             </h2>
             <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-              The principles that guide everything we do, every day
+              The principles that drive us to secure your operations and
+              eliminate risks at every step
             </p>
           </div>
 
@@ -213,7 +205,8 @@ export default function AboutPage() {
                   Integrity
                 </h3>
                 <p className="text-neutral-600 leading-relaxed">
-                  Full transparency from first quotation to final delivery. Our
+                  Full transparency from first quotation to final delivery. We
+                  control and secure every step to eliminate hidden risks. Our
                   word is our bond, and honesty is non-negotiable.
                 </p>
                 <div className="mt-6 h-1 w-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>

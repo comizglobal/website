@@ -34,8 +34,8 @@ export default function Header() {
       }`}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+        <div className="flex items-center justify-center h-16 md:h-20 relative">
+          {/* Centered Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <Image
               src="/logo.png"
@@ -46,8 +46,8 @@ export default function Header() {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          {/* Desktop Navigation - Absolute Right */}
+          <div className="hidden md:flex items-center space-x-1 absolute right-0">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -78,9 +78,9 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Absolute Right */}
           <button
-            className="md:hidden p-2.5 text-neutral-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-200"
+            className="md:hidden absolute right-0 p-2.5 text-neutral-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-200"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >

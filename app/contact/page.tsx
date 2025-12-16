@@ -121,14 +121,6 @@ export default function ContactPage() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-green-200 mb-8 shadow-sm animate-fade-in-up">
-              <MessageSquare className="w-4 h-4 text-green-600" />
-              <span className="text-sm font-medium text-neutral-700">
-                Let&apos;s Connect
-              </span>
-            </div>
-
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-neutral-900 mb-8 leading-tight animate-fade-in-up animation-delay-200">
               Get in{" "}
               <span className="relative inline-block">
@@ -151,11 +143,6 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
             {/* Contact Information */}
             <div>
-              <div className="inline-block px-4 py-2 bg-green-50 rounded-full mb-4">
-                <span className="text-sm font-semibold text-green-700">
-                  Contact Information
-                </span>
-              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
                 We&apos;d Love to Hear From You
               </h2>

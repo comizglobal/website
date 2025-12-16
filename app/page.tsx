@@ -9,7 +9,6 @@ import {
   TruckIcon,
   Search,
   CheckCircle2,
-  Sparkles,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -18,25 +17,25 @@ export default function HomePage() {
       icon: Search,
       title: "Sourcing & Procurement",
       description:
-        "Direct access to verified manufacturers across China and Asia with comprehensive supplier vetting.",
+        "Direct access to verified manufacturers with comprehensive risk assessment. We eliminate fake factories and middlemen before they impact your business.",
     },
     {
       icon: Shield,
       title: "Quality Assurance",
       description:
-        "Multi-stage inspections and quality control to ensure products meet your exact specifications.",
+        "Multi-stage inspections and quality control to prevent product mismatches. What you approve is what you receive—no surprises.",
     },
     {
       icon: TruckIcon,
       title: "Logistics Management",
       description:
-        "End-to-end shipping coordination from factory to your destination across multiple continents.",
+        "End-to-end shipping coordination with expert customs handling. We navigate regulations so your shipments arrive on time, without delays.",
     },
     {
       icon: Globe2,
       title: "Global Network",
       description:
-        "Operations spanning Middle East, Israel, and Europe with local expertise in each market.",
+        "Operations spanning Middle East, Israel, and Europe with local expertise to manage regional compliance and market-specific risks.",
     },
   ];
 
@@ -61,14 +60,6 @@ export default function HomePage() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-green-200 mb-8 shadow-sm animate-fade-in-up">
-              <Sparkles className="w-4 h-4 text-green-600" />
-              <span className="text-sm font-medium text-neutral-700">
-                Global Sourcing Excellence
-              </span>
-            </div>
-
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-neutral-900 mb-8 leading-tight animate-fade-in-up animation-delay-200">
               International Trading
               <br />
@@ -79,7 +70,8 @@ export default function HomePage() {
             </h1>
 
             <p className="text-lg md:text-xl text-neutral-600 mb-6 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-              Global Sourcing. Reliable Partners. Smarter Trade.
+              We identify and eliminate sourcing risks before they impact your
+              business.
             </p>
 
             {/* Region Pills */}
@@ -153,8 +145,9 @@ export default function HomePage() {
                 Complete Trade Solutions
               </h2>
               <p className="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-                From factory sourcing to final delivery, we manage every step of
-                your international trade journey.
+                From factory verification to final delivery, every step is
+                controlled. Our role is to secure your operations, not just find
+                suppliers.
               </p>
             </div>
 
@@ -228,8 +221,9 @@ export default function HomePage() {
                 Simple, Structured, Fully Controlled
               </h2>
               <p className="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-                Our approach ensures quality and reliability at every stage of
-                your sourcing journey.
+                Every step is monitored and controlled to eliminate risks before
+                they reach you. From factory verification to final delivery,
+                your operations are secured.
               </p>
             </div>
 
@@ -309,12 +303,12 @@ export default function HomePage() {
                 <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
-                We Don't Just Source. We Protect.
+                We Secure Your Operations, Not Just Find Suppliers
               </h2>
               <p className="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-                International sourcing comes with hidden dangers. CoMiz Global
-                eliminates these risks so you can focus on growing your
-                business.
+                International sourcing comes with hidden dangers. We identify
+                and eliminate these risks before they impact your business, so
+                you can focus on growth.
               </p>
             </div>
 
@@ -390,7 +384,8 @@ export default function HomePage() {
                   Your Trusted Partner in Global Trade
                 </h2>
                 <p className="text-xl text-neutral-700 mb-4 leading-relaxed font-medium">
-                  The right partnership makes everything possible.
+                  We secure your operations at every step. The right partnership
+                  eliminates risks and makes everything possible.
                 </p>
                 <div className="space-y-4 mb-8">
                   {[
@@ -426,7 +421,7 @@ export default function HomePage() {
                   <CardContent className="p-8 md:p-10 bg-gradient-to-br from-brand-primary to-green-800">
                     <div className="text-center text-white">
                       <Globe2 className="w-16 h-16 mx-auto mb-6 opacity-90" />
-                      <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                      <h3 className="text-white text-2xl md:text-3xl font-bold mb-4">
                         Global Network
                       </h3>
                       <p className="text-green-100 mb-6 leading-relaxed">

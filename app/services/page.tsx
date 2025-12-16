@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import Link from "next/link";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import {
   Search,
   ShieldCheck,
@@ -15,73 +15,74 @@ import {
   Shirt,
   Zap,
   Watch,
-  Gift
-} from 'lucide-react';
+  Gift,
+} from "lucide-react";
 
 export const metadata = {
-  title: 'Our Services - CoMiz Global',
-  description: 'International trading services including sourcing, quality control, production management, and logistics.',
+  title: "Our Services - CoMiz Global",
+  description:
+    "International trading services including sourcing, quality control, production management, and logistics.",
 };
 
 const services = [
   {
     icon: Search,
-    title: 'Sourcing & Procurement',
-    description: 'We identify and verify manufacturers for your specific product needs, specializing in consumer electronics, home goods, fashion accessories, and trending products.',
-    features: [
-      'Factory audits and site visits in China and Asia',
-      'Supplier verification and compliance checks',
-      'Product specifications matching and sampling',
-    ],
+    title: "Sourcing & Procurement",
+    description:
+      "We identify and eliminate fake factories and unreliable suppliers before they impact your business. Complete risk assessment and verification for consumer electronics, home goods, fashion accessories, and trending products.",
   },
   {
     icon: ShieldCheck,
-    title: 'Quality Control',
-    description: 'Multi-stage inspections ensure products meet your specifications and international standards before shipment.',
-    features: [
-      'Pre-production sample approval process',
-      'In-production monitoring and inspection',
-      'Final inspection with detailed reports and photos',
-    ],
+    title: "Quality Control",
+    description:
+      "Multi-stage inspections eliminate quality mismatches. We ensure what you approve is what you receive—no surprises in production.",
   },
   {
     icon: Factory,
-    title: 'Production Management',
-    description: 'Ongoing oversight of manufacturing process with regular updates to keep your project on schedule and within budget.',
-    features: [
-      'Timeline tracking and production status updates',
-      'Direct communication with factory management',
-      'Issue resolution and quality problem mitigation',
-    ],
+    title: "Production Management",
+    description:
+      "Full control and oversight of manufacturing to prevent delays and quality issues. Regular updates keep your project secured, on schedule, and within budget.",
   },
   {
     icon: TruckIcon,
-    title: 'Logistics & Delivery',
-    description: 'Complete shipping coordination from factory to your destination across Middle East, Israel, and Europe.',
-    features: [
-      'Air freight, sea freight, and express shipping options',
-      'Customs documentation and clearance assistance',
-      'Shipment tracking and delivery confirmation',
-    ],
+    title: "Logistics & Delivery",
+    description:
+      "Expert customs handling eliminates shipping delays and compliance issues. We navigate regulations so your shipments arrive on time across Middle East, Israel, and Europe.",
   },
 ];
 
 const processSteps = [
-  { step: 1, title: 'Discovery', description: 'Understand requirements and specifications' },
-  { step: 2, title: 'Sourcing', description: 'Identify and verify suitable manufacturers' },
-  { step: 3, title: 'Production', description: 'Monitor manufacturing and quality control' },
-  { step: 4, title: 'Logistics', description: 'Coordinate shipping and delivery' },
+  {
+    step: 1,
+    title: "Discovery",
+    description: "Understand requirements and specifications",
+  },
+  {
+    step: 2,
+    title: "Sourcing",
+    description: "Identify and verify suitable manufacturers",
+  },
+  {
+    step: 3,
+    title: "Production",
+    description: "Monitor manufacturing and quality control",
+  },
+  {
+    step: 4,
+    title: "Logistics",
+    description: "Coordinate shipping and delivery",
+  },
 ];
 
 const industries = [
-  { name: 'Electronics', icon: Cpu },
-  { name: 'Home & Lifestyle', icon: Home },
-  { name: 'Fashion / Textile', icon: Shirt },
-  { name: 'Trending Products', icon: Zap },
-  { name: 'Consumer Goods', icon: Package },
-  { name: 'Smart Devices', icon: Watch },
-  { name: 'Accessories', icon: Gift },
-  { name: 'Seasonal Items', icon: Sparkles },
+  { name: "Electronics", icon: Cpu },
+  { name: "Home & Lifestyle", icon: Home },
+  { name: "Fashion / Textile", icon: Shirt },
+  { name: "Trending Products", icon: Zap },
+  { name: "Consumer Goods", icon: Package },
+  { name: "Smart Devices", icon: Watch },
+  { name: "Accessories", icon: Gift },
+  { name: "Seasonal Items", icon: Sparkles },
 ];
 
 export default function ServicesPage() {
@@ -99,15 +100,8 @@ export default function ServicesPage() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-green-200 mb-8 shadow-sm animate-fade-in-up">
-              <Sparkles className="w-4 h-4 text-green-600" />
-              <span className="text-sm font-medium text-neutral-700">Comprehensive Trade Solutions</span>
-            </div>
-
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-neutral-900 mb-8 leading-tight animate-fade-in-up animation-delay-200">
-              Our
-              {' '}
+              Our{" "}
               <span className="relative inline-block">
                 <span className="text-gradient">Services</span>
                 <div className="absolute -bottom-2 left-0 right-0 h-3 bg-green-200 opacity-30 -z-10 transform -skew-y-1"></div>
@@ -115,7 +109,9 @@ export default function ServicesPage() {
             </h1>
 
             <p className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-              We manage the complete trade process from factory sourcing to final delivery, handling documentation, quality assurance, and international shipping.
+              From factory verification to final delivery, every step is
+              controlled. We secure your operations by eliminating sourcing
+              risks before they impact your business.
             </p>
           </div>
         </div>
@@ -125,14 +121,17 @@ export default function ServicesPage() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-green-50 rounded-full mb-4">
-              <span className="text-sm font-semibold text-green-700">What We Offer</span>
+            <div className="mb-4">
+              <span className="text-sm font-semibold text-neutral-500 uppercase tracking-wider">
+                What We Offer
+              </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
               End-to-End Trade Support
             </h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Comprehensive support at every stage of your supply chain
+              We control and secure every stage of your supply chain to
+              eliminate risks before they reach you
             </p>
           </div>
 
@@ -140,18 +139,18 @@ export default function ServicesPage() {
             {services.map((service) => (
               <Card
                 key={service.title}
-                className="group relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden bg-gradient-to-br from-white to-green-50/20 hover:-translate-y-1"
+                className="group relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden bg-gradient-to-br from-white to-[#1C4332]/5 hover:-translate-y-1"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute top-0 right-0 w-32 h-32 bg-green-100 rounded-full filter blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 -translate-y-1/2 translate-x-1/2"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#1C4332]/0 to-[#1C4332]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#1C4332]/20 rounded-full filter blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 -translate-y-1/2 translate-x-1/2"></div>
 
                 <CardContent className="p-8 relative z-10">
                   <div className="flex items-start gap-5 mb-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shrink-0 shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                    <div className="w-14 h-14 bg-gradient-to-br from-[#1C4332] to-[#1C4332] rounded-xl flex items-center justify-center shrink-0 shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                       <service.icon className="w-7 h-7 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-neutral-900 mb-2 group-hover:text-green-700 transition-colors duration-300">
+                      <h3 className="text-xl font-bold text-neutral-900 mb-2 group-hover:text-[#1C4332] transition-colors duration-300">
                         {service.title}
                       </h3>
                       <p className="text-neutral-600 leading-relaxed">
@@ -160,18 +159,7 @@ export default function ServicesPage() {
                     </div>
                   </div>
 
-                  <ul className="space-y-3">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3">
-                        <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-green-600" />
-                        </div>
-                        <span className="text-neutral-700 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-6 h-1 w-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                  <div className="mt-6 h-1 w-16 bg-gradient-to-r from-[#1C4332] to-[#1C4332] rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                 </CardContent>
               </Card>
             ))}
@@ -185,14 +173,17 @@ export default function ServicesPage() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full mb-4 border border-green-200">
-              <span className="text-sm font-semibold text-green-700">How We Work</span>
+            <div className="mb-4">
+              <span className="text-sm font-semibold text-neutral-500 uppercase tracking-wider">
+                How We Work
+              </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
               Our Process
             </h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              A streamlined approach to bring your products from concept to delivery
+              A fully controlled approach that eliminates risks at every stage,
+              from concept to delivery
             </p>
           </div>
 
@@ -212,7 +203,9 @@ export default function ServicesPage() {
                     <h3 className="font-bold text-neutral-900 mb-2 text-lg group-hover:text-green-700 transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-neutral-600">{item.description}</p>
+                    <p className="text-sm text-neutral-600">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -225,8 +218,10 @@ export default function ServicesPage() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-green-50 rounded-full mb-4">
-              <span className="text-sm font-semibold text-green-700">Our Expertise</span>
+            <div className="mb-4">
+              <span className="text-sm font-semibold text-neutral-500 uppercase tracking-wider">
+                Our Expertise
+              </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
               Industries We Serve
@@ -265,10 +260,11 @@ export default function ServicesPage() {
             <Card className="border-0 shadow-2xl overflow-hidden bg-gradient-to-br from-brand-primary via-green-800 to-brand-primary">
               <CardContent className="p-10 md:p-16 text-center">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                  Ready to Get Started?
+                  Ready to Secure Your Sourcing Operations?
                 </h2>
                 <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
-                  Tell us about your sourcing needs and we&apos;ll help you find the perfect manufacturing partner.
+                  Tell us about your needs and we&apos;ll eliminate the risks
+                  while connecting you with verified manufacturing partners.
                 </p>
                 <Link href="/contact">
                   <Button
