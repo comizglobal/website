@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700;900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -46,15 +46,15 @@
   --radius-4xl: calc(var(--radius) + 16px);
 
   /* CoMiz Global Brand Colors */
-  --color-green-50: #ECFDF5;
-  --color-green-100: #D1FAE5;
-  --color-green-200: #A7F3D0;
-  --color-green-300: #6EE7B7;
-  --color-green-400: #34D399;
-  --color-green-500: #10B981;
-  --color-green-600: #059669;
-  --color-green-700: #047857;
-  --color-green-800: #065F46;
+  --color-green-50: #E8F0ED;
+  --color-green-100: #C5D9D0;
+  --color-green-200: #A0C2B3;
+  --color-green-300: #7BAB96;
+  --color-green-400: #5C9479;
+  --color-green-500: #3D7D5C;
+  --color-green-600: #1C4332;
+  --color-green-700: #163528;
+  --color-green-800: #10271E;
   --color-neutral-50: #F8FAFC;
   --color-neutral-100: #F1F5F9;
   --color-neutral-200: #E2E8F0;
@@ -79,29 +79,29 @@
   --popover-foreground: #3F3F46;
   --primary: #1A281F;
   --primary-foreground: #FFFFFF;
-  --secondary: #ECFDF5;
+  --secondary: #E8F0ED;
   --secondary-foreground: #1A281F;
   --muted: #F8FAFC;
   --muted-foreground: #3F3F46;
-  --accent: #10B981;
+  --accent: #1C4332;
   --accent-foreground: #FFFFFF;
   --destructive: #DC2626;
   --border: #E2E8F0;
   --input: #E2E8F0;
-  --ring: #059669;
-  --chart-1: #10B981;
-  --chart-2: #34D399;
-  --chart-3: #6EE7B7;
-  --chart-4: #A7F3D0;
-  --chart-5: #D1FAE5;
+  --ring: #1C4332;
+  --chart-1: #1C4332;
+  --chart-2: #3D7D5C;
+  --chart-3: #5C9479;
+  --chart-4: #A0C2B3;
+  --chart-5: #C5D9D0;
   --sidebar: #FFFFFF;
   --sidebar-foreground: #3F3F46;
   --sidebar-primary: #1A281F;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #ECFDF5;
+  --sidebar-accent: #E8F0ED;
   --sidebar-accent-foreground: #1A281F;
   --sidebar-border: #E2E8F0;
-  --sidebar-ring: #059669;
+  --sidebar-ring: #1C4332;
 }
 
 @layer base {
@@ -120,6 +120,8 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply text-neutral-900;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
   }
 }
 
@@ -276,7 +278,7 @@
 
   /* Text Gradient */
   .text-gradient {
-    background: linear-gradient(135deg, #059669 0%, #10B981 50%, #34D399 100%);
+    background: linear-gradient(135deg, #1C4332 0%, #3D7D5C 50%, #5C9479 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -284,11 +286,11 @@
 
   /* Glow Effects */
   .glow-green {
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 0 20px rgba(28, 67, 50, 0.3);
   }
 
   .glow-green-hover:hover {
-    box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+    box-shadow: 0 0 30px rgba(28, 67, 50, 0.4);
   }
 
   /* Smooth underline animation */
@@ -303,7 +305,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #059669, #10B981);
+    background: linear-gradient(90deg, #1C4332, #3D7D5C);
     transition: width 0.3s ease;
   }
 
@@ -317,7 +319,7 @@
   }
 
   .card-glow:hover {
-    box-shadow: 0 10px 40px rgba(16, 185, 129, 0.15), 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 40px rgba(28, 67, 50, 0.15), 0 4px 12px rgba(0, 0, 0, 0.05);
     transform: translateY(-2px);
   }
 
@@ -347,10 +349,10 @@
   /* Border glow animation */
   @keyframes border-glow {
     0%, 100% {
-      border-color: rgba(16, 185, 129, 0.3);
+      border-color: rgba(28, 67, 50, 0.3);
     }
     50% {
-      border-color: rgba(16, 185, 129, 0.6);
+      border-color: rgba(28, 67, 50, 0.6);
     }
   }
 

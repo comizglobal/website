@@ -82,7 +82,7 @@ export async function submitContactForm(
               }
               .label {
                 font-weight: bold;
-                color: #059669;
+                color: #1C4332;
                 display: block;
                 margin-bottom: 5px;
               }
@@ -90,7 +90,7 @@ export async function submitContactForm(
                 background: white;
                 padding: 10px;
                 border-radius: 4px;
-                border-left: 3px solid #10B981;
+                border-left: 3px solid #1C4332;
               }
               .footer {
                 margin-top: 30px;

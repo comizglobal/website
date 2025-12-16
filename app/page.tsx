@@ -101,7 +101,7 @@ export default function HomePage() {
                   className="bg-brand-primary hover:bg-green-700 text-white font-semibold px-8 py-6 text-base rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl shimmer-hover group"
                 >
                   <span className="flex items-center gap-2">
-                    Get Started
+                    Get In Touch
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Button>
@@ -260,10 +260,7 @@ export default function HomePage() {
                     "Pre-shipment inspection, compliance verification, and coordinated logistics to ensure on-time delivery.",
                 },
               ].map((item, index) => (
-                <div
-                  key={item.step}
-                  className="relative group"
-                >
+                <div key={item.step} className="relative group">
                   <div className="flex gap-6">
                     {/* Step Number */}
                     <div
@@ -316,7 +313,8 @@ export default function HomePage() {
               </h2>
               <p className="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
                 International sourcing comes with hidden dangers. CoMiz Global
-                eliminates these risks so you can focus on growing your business.
+                eliminates these risks so you can focus on growing your
+                business.
               </p>
             </div>
 
