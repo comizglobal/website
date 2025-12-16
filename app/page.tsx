@@ -453,10 +453,11 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
             <div className="text-center mb-12">
-              <div className="inline-block px-4 py-2 bg-white border border-neutral-200 rounded-lg mb-4">
-                <span className="text-sm font-semibold text-neutral-700 uppercase tracking-wide">
+              <div className="mb-4">
+                <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                   Leadership
                 </span>
+                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
                 Meet Our Co-Founders

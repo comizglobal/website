@@ -61,9 +61,10 @@ export default function AboutPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <div className="mb-4">
-                <span className="text-sm font-semibold text-neutral-500 uppercase tracking-wider">
+                <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                   What Drives Us
                 </span>
+                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6">
                 Our Mission
@@ -161,10 +162,11 @@ export default function AboutPage() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full mb-4 border border-green-200">
-              <span className="text-sm font-semibold text-green-700">
+            <div className="mb-4">
+              <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                 What We Stand For
               </span>
+              <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6">
               Our Core Values
@@ -259,10 +261,11 @@ export default function AboutPage() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-green-50 rounded-full mb-4">
-              <span className="text-sm font-semibold text-green-700">
+            <div className="mb-4">
+              <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                 Leadership Team
               </span>
+              <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6">
               Meet Our Founders

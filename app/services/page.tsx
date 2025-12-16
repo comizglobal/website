@@ -122,9 +122,10 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="mb-4">
-              <span className="text-sm font-semibold text-neutral-500 uppercase tracking-wider">
+              <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                 What We Offer
               </span>
+              <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
               End-to-End Trade Support
@@ -174,9 +175,10 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="mb-4">
-              <span className="text-sm font-semibold text-neutral-500 uppercase tracking-wider">
+              <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                 How We Work
               </span>
+              <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
               Our Process
@@ -219,9 +221,10 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="mb-4">
-              <span className="text-sm font-semibold text-neutral-500 uppercase tracking-wider">
+              <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                 Our Expertise
               </span>
+              <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
               Industries We Serve
