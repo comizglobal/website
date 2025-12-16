@@ -93,14 +93,14 @@ export default function ContactPage() {
     },
     {
       icon: Phone,
-      title: "Elioth (Israel)",
+      title: "Elioth Mizrahi (Israel)",
       content: "+972-559755959",
       href: "tel:+972559755959",
       isLink: true,
     },
     {
       icon: Phone,
-      title: "Joseph (France)",
+      title: "Joseph Cohen (France)",
       content: "+33-756830342",
       href: "tel:+33756830342",
       isLink: true,
