@@ -70,8 +70,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-lg md:text-xl text-neutral-600 mb-6 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-              We identify and eliminate sourcing risks before they impact your
-              business.
+              Global Sourcing. Reliable Partners. Smarter Trade.
             </p>
 
             {/* Region Pills */}
