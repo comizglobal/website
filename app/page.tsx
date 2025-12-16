@@ -143,10 +143,11 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <div className="inline-block px-4 py-2 bg-green-50 rounded-full mb-4">
-                <span className="text-sm font-semibold text-green-700">
+              <div className="mb-4">
+                <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                   What We Offer
                 </span>
+                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
                 Complete Trade Solutions
@@ -166,11 +167,20 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <CardContent className="p-8 relative z-10">
                     <div className="flex items-start gap-5">
-                      <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shrink-0 shadow-md transform group-hover:scale-110 transition-transform duration-300">
+                      <div
+                        className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0 shadow-md transform group-hover:scale-110 transition-transform duration-300"
+                        style={{
+                          background:
+                            "linear-gradient(to bottom right, #1C4332, #245940)",
+                        }}
+                      >
                         <feature.icon className="w-7 h-7 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-neutral-900 mb-2 group-hover:text-green-700 transition-colors duration-200">
+                        <h3
+                          className="text-xl font-bold text-neutral-900 mb-2 transition-colors duration-200"
+                          style={{ color: "inherit" }}
+                        >
                           {feature.title}
                         </h3>
                         <p className="text-neutral-600 leading-relaxed">
@@ -178,7 +188,13 @@ export default function HomePage() {
                         </p>
                       </div>
                     </div>
-                    <div className="mt-6 h-1 w-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    <div
+                      className="mt-6 h-1 w-12 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                      style={{
+                        background:
+                          "linear-gradient(to right, #1C4332, #245940)",
+                      }}
+                    ></div>
                   </CardContent>
                 </Card>
               ))}
@@ -197,6 +213,168 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* How We Work Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-green-50/30 via-white to-accent-beige/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="mb-4">
+                <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
+                  How We Work
+                </span>
+                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
+                Simple, Structured, Fully Controlled
+              </h2>
+              <p className="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+                Our approach ensures quality and reliability at every stage of
+                your sourcing journey.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                {
+                  step: "01",
+                  title: "Factory Verification",
+                  description:
+                    "Comprehensive vetting of manufacturers through on-site audits, certifications review, and production capability assessment.",
+                },
+                {
+                  step: "02",
+                  title: "Sampling & Validation",
+                  description:
+                    "Product samples reviewed against your specifications. No production starts until you approve quality, materials, and finish.",
+                },
+                {
+                  step: "03",
+                  title: "Production Monitoring",
+                  description:
+                    "Ongoing oversight during manufacturing with regular updates, quality checks, and timeline management.",
+                },
+                {
+                  step: "04",
+                  title: "Final Inspection & Delivery",
+                  description:
+                    "Pre-shipment inspection, compliance verification, and coordinated logistics to ensure on-time delivery.",
+                },
+              ].map((item, index) => (
+                <div
+                  key={item.step}
+                  className="relative group"
+                >
+                  <div className="flex gap-6">
+                    {/* Step Number */}
+                    <div
+                      className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 shadow-lg"
+                      style={{
+                        background:
+                          "linear-gradient(to bottom right, #1C4332, #245940)",
+                      }}
+                    >
+                      <span className="text-2xl font-bold text-white">
+                        {item.step}
+                      </span>
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1 pt-1">
+                      <h3 className="text-xl font-bold text-neutral-900 mb-3">
+                        {item.title}
+                      </h3>
+                      <p className="text-neutral-600 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Connecting Line (hidden on last item in each column on mobile) */}
+                  {index < 3 && (
+                    <div className="hidden md:block absolute left-8 top-20 w-0.5 h-12 bg-gradient-to-b from-green-300 to-transparent"></div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Real Risks We Eliminate Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-red-50/30 via-white to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="mb-4">
+                <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
+                  Real Risks We Eliminate
+                </span>
+                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
+                We Don't Just Source. We Protect.
+              </h2>
+              <p className="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+                International sourcing comes with hidden dangers. CoMiz Global
+                eliminates these risks so you can focus on growing your business.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "No Fake Factories",
+                  description:
+                    "We verify every manufacturer through on-site visits, background checks, and compliance audits. No shell companies, no middlemen posing as factories.",
+                },
+                {
+                  title: "No Hidden MOQ Traps",
+                  description:
+                    "Transparent minimum order quantities from day one. No surprise requirements after you've invested time and money in samples.",
+                },
+                {
+                  title: "No Quality Mismatches",
+                  description:
+                    "What you approve in samples is what you receive in production. Our multi-stage inspections ensure consistency at every batch.",
+                },
+                {
+                  title: "No Customs Nightmares",
+                  description:
+                    "Expert handling of documentation, compliance, and logistics. We navigate regulations so your shipments arrive on time, every time.",
+                },
+              ].map((risk) => (
+                <Card
+                  key={risk.title}
+                  className="group relative border-2 border-neutral-200 hover:border-green-500/30 hover:shadow-xl transition-all duration-300 overflow-hidden bg-white"
+                >
+                  <CardContent className="p-8">
+                    <div className="flex items-start gap-5">
+                      <div
+                        className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0 shadow-md"
+                        style={{
+                          background:
+                            "linear-gradient(to bottom right, #1C4332, #245940)",
+                        }}
+                      >
+                        <Shield className="w-7 h-7 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-neutral-900 mb-2">
+                          {risk.title}
+                        </h3>
+                        <p className="text-neutral-600 leading-relaxed">
+                          {risk.description}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-green-50 via-accent-blue-gray/30 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -204,10 +382,11 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {/* Content */}
               <div>
-                <div className="inline-block px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full mb-4 border border-green-200">
-                  <span className="text-sm font-semibold text-green-700">
+                <div className="mb-4">
+                  <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                     Why Choose Us
                   </span>
+                  <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mt-2"></div>
                 </div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
                   Your Trusted Partner in Global Trade
@@ -290,8 +469,9 @@ export default function HomePage() {
                 Meet Our Co-Founders
               </h2>
               <p className="text-lg text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-                CoMiz Global was founded by Joseph Cohen and Elioth Mizrahi with a shared vision:
-                to revolutionize international trade by connecting businesses with the world&apos;s best manufacturers.
+                CoMiz Global was founded by Joseph Cohen and Elioth Mizrahi with
+                a shared vision: to revolutionize international trade by
+                connecting businesses with the world&apos;s best manufacturers.
               </p>
             </div>
 
@@ -317,9 +497,7 @@ export default function HomePage() {
                       Co-Founder
                     </p>
                     <div className="w-12 h-0.5 bg-green-600 mx-auto mb-3"></div>
-                    <p className="text-sm text-neutral-600">
-                      France
-                    </p>
+                    <p className="text-sm text-neutral-600">France</p>
                   </div>
                 </div>
               </div>
@@ -344,9 +522,7 @@ export default function HomePage() {
                       Co-Founder
                     </p>
                     <div className="w-12 h-0.5 bg-green-600 mx-auto mb-3"></div>
-                    <p className="text-sm text-neutral-600">
-                      Israel
-                    </p>
+                    <p className="text-sm text-neutral-600">Israel</p>
                   </div>
                 </div>
               </div>
@@ -355,9 +531,10 @@ export default function HomePage() {
             {/* Expertise Section */}
             <div className="text-center max-w-3xl mx-auto">
               <p className="text-base text-neutral-700 leading-relaxed mb-8">
-                With expertise spanning global trade, negotiation, finance, and business strategy,
-                our founders bring a unique blend of international experience and entrepreneurial
-                drive to every partnership.
+                With expertise spanning global trade, negotiation, finance, and
+                business strategy, our founders bring a unique blend of
+                international experience and entrepreneurial drive to every
+                partnership.
               </p>
 
               <Link href="/about">
