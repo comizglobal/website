@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, Phone, ArrowRight, Globe2 } from "lucide-react";
+import { Mail, Phone, ArrowRight, Globe } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -41,7 +41,7 @@ export default function Footer() {
               Global Sourcing. Reliable Partners. Smarter Trade.
             </p>
             <div className="flex items-center gap-2 text-sm text-green-200">
-              <Globe2 className="w-4 h-4 text-green-400" />
+              <Globe className="w-4 h-4 text-green-400" />
               <span>UAE & Israel Operations</span>
             </div>
           </div>
@@ -151,15 +151,9 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-green-800/50 relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-green-200 text-sm text-center md:text-left">
+          <div className="flex justify-center items-center">
+            <p className="text-green-200 text-sm text-center">
               © {currentYear} CoMiz Global. All rights reserved.
-            </p>
-            <p className="text-green-200 text-sm flex items-center gap-2">
-              Made with care by{" "}
-              <span className="text-green-400 font-semibold hover:text-green-300 transition-colors">
-                Sitekept
-              </span>
             </p>
           </div>
         </div>

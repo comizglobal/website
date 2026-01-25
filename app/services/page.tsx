@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -6,16 +7,7 @@ import {
   ShieldCheck,
   Factory,
   TruckIcon,
-  CheckCircle2,
   ArrowRight,
-  Sparkles,
-  Package,
-  Cpu,
-  Home,
-  Shirt,
-  Zap,
-  Watch,
-  Gift,
 } from "lucide-react";
 
 export const metadata = {
@@ -75,14 +67,14 @@ const processSteps = [
 ];
 
 const industries = [
-  { name: "Electronics", icon: Cpu },
-  { name: "Home & Lifestyle", icon: Home },
-  { name: "Fashion / Textile", icon: Shirt },
-  { name: "Trending Products", icon: Zap },
-  { name: "Consumer Goods", icon: Package },
-  { name: "Smart Devices", icon: Watch },
-  { name: "Accessories", icon: Gift },
-  { name: "Seasonal Items", icon: Sparkles },
+  { name: "Electronics", iconSrc: "/icons/components.png" },
+  { name: "Home & Lifestyle", iconSrc: "/icons/home.png" },
+  { name: "Fashion / Textile", iconSrc: "/icons/tshirt.png" },
+  { name: "Trending Products", iconSrc: "/icons/trend.png" },
+  { name: "Consumer Goods", iconSrc: "/icons/shopping-bag.png" },
+  { name: "Smart Devices", iconSrc: "/icons/gadgets.png" },
+  { name: "Accessories", iconSrc: "/icons/gift.png" },
+  { name: "Seasonal Items", iconSrc: "/icons/fire.png" },
 ];
 
 export default function ServicesPage() {
@@ -95,24 +87,31 @@ export default function ServicesPage() {
           <div className="absolute top-20 left-10 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
           <div className="absolute top-40 right-10 w-72 h-72 bg-accent-beige rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
         </div>
-
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03]"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-neutral-900 mb-8 leading-tight animate-fade-in-up animation-delay-200">
-              Our{" "}
-              <span className="relative inline-block">
-                <span className="text-gradient">Services</span>
-                <div className="absolute -bottom-2 left-0 right-0 h-3 bg-green-200 opacity-30 -z-10 transform -skew-y-1"></div>
-              </span>
+              Our Services
             </h1>
 
-            <p className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
+            <p className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed mb-8 animate-fade-in-up animation-delay-400">
               From factory verification to final delivery, every step is
               controlled. We secure your operations by eliminating sourcing
               risks before they impact your business.
             </p>
+
+            {/* Process boxes */}
+            <div className="flex flex-wrap justify-center gap-3 mb-10 animate-fade-in-up animation-delay-600">
+              {["Industries", "Support", "Process"].map((item) => (
+                <span
+                  key={item}
+                  className="px-4 py-2 bg-white/60 backdrop-blur-sm border border-green-200/50 rounded-full text-sm font-medium text-neutral-700"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -125,7 +124,6 @@ export default function ServicesPage() {
               <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                 What We Offer
               </span>
-              <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
               End-to-End Trade Support
@@ -169,46 +167,82 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-green-50 via-accent-blue-gray/30 to-white relative overflow-hidden">
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-100 rounded-full filter blur-3xl opacity-20"></div>
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <div className="mb-4">
-              <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
-                How We Work
-              </span>
-              <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
+      <section className="py-16 md:py-24 bg-gradient-to-br from-green-50/30 via-white to-accent-beige/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="mb-4">
+                <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
+                  How We Work
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
+                Simple, Structured, Fully Controlled
+              </h2>
+              <p className="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+                Every step is monitored and controlled to eliminate risks before
+                they reach you. From factory verification to final delivery,
+                your operations are secured.
+              </p>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
-              Our Process
-            </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              A fully controlled approach that eliminates risks at every stage,
-              from concept to delivery
-            </p>
-          </div>
 
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {processSteps.map((item, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                {
+                  step: "01",
+                  title: "Factory Verification",
+                  description:
+                    "Comprehensive vetting of manufacturers through on-site audits, certifications review, and production capability assessment.",
+                },
+                {
+                  step: "02",
+                  title: "Sampling & Validation",
+                  description:
+                    "Product samples reviewed against your specifications. No production starts until you approve quality, materials, and finish.",
+                },
+                {
+                  step: "03",
+                  title: "Production Monitoring",
+                  description:
+                    "Ongoing oversight during manufacturing with regular updates, quality checks, and timeline management.",
+                },
+                {
+                  step: "04",
+                  title: "Final Inspection & Delivery",
+                  description:
+                    "Pre-shipment inspection, compliance verification, and coordinated logistics to ensure on-time delivery.",
+                },
+              ].map((item, index) => (
                 <div key={item.step} className="relative group">
-                  {/* Connector Line */}
-                  {index < processSteps.length - 1 && (
-                    <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-gradient-to-r from-green-400 to-green-200"></div>
-                  )}
-
-                  <div className="relative text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-2xl flex items-center justify-center font-bold text-2xl mx-auto mb-4 shadow-lg transform group-hover:scale-110 group-hover:-rotate-3 transition-all duration-300 relative z-10">
-                      {item.step}
+                  <div className="flex gap-6">
+                    {/* Step Number */}
+                    <div
+                      className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 shadow-lg"
+                      style={{
+                        background:
+                          "linear-gradient(to bottom right, #1C4332, #245940)",
+                      }}
+                    >
+                      <span className="text-2xl font-bold text-white">
+                        {item.step}
+                      </span>
                     </div>
-                    <h3 className="font-bold text-neutral-900 mb-2 text-lg group-hover:text-green-700 transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-neutral-600">
-                      {item.description}
-                    </p>
+
+                    {/* Content */}
+                    <div className="flex-1 pt-1">
+                      <h3 className="text-xl font-bold text-neutral-900 mb-3">
+                        {item.title}
+                      </h3>
+                      <p className="text-neutral-600 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
+
+                  {/* Connecting Line (hidden on last item in each column on mobile) */}
+                  {index < 3 && (
+                    <div className="hidden md:block absolute left-8 top-20 w-0.5 h-12 bg-gradient-to-b from-green-300 to-transparent"></div>
+                  )}
                 </div>
               ))}
             </div>
@@ -224,7 +258,6 @@ export default function ServicesPage() {
               <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                 Our Expertise
               </span>
-              <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
               Industries We Serve
@@ -243,7 +276,13 @@ export default function ServicesPage() {
                 >
                   <CardContent className="p-6 text-center">
                     <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-green-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <industry.icon className="w-6 h-6 text-green-600" />
+                      <Image
+                        src={industry.iconSrc}
+                        alt={`${industry.name} icon`}
+                        width={24}
+                        height={24}
+                        className="object-contain"
+                      />
                     </div>
                     <p className="font-semibold text-neutral-900 text-sm group-hover:text-green-700 transition-colors">
                       {industry.name}

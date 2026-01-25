@@ -40,9 +40,10 @@ export default function Header() {
             <Image
               src="/logo.png"
               alt="CoMiz Global"
-              width={100}
-              height={100}
+              width={300}
+              height={300}
               priority
+              className="w-60 md:w-72 h-auto"
             />
           </Link>
 

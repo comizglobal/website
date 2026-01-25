@@ -5,11 +5,10 @@ import {
   Target,
   Users,
   Shield,
-  Globe2,
+  Globe,
   ArrowRight,
   Award,
   TrendingUp,
-  Zap,
 } from "lucide-react";
 
 export const metadata = {
@@ -29,18 +28,14 @@ export default function AboutPage() {
           <div className="absolute top-40 right-10 w-72 h-72 bg-accent-beige rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
           <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
-
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03]"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-7xl  font-bold text-neutral-900 mb-8 leading-tight animate-fade-in-up animation-delay-200">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-neutral-900 mb-8 leading-tight animate-fade-in-up animation-delay-200">
               About CoMiz
               <br />
-              <span className="relative inline-block">
-                <span className="text-green-600">Global</span>
-                <div className="absolute -bottom-2 left-0 right-0 h-3 bg-green-200 opacity-30 -z-10 transform -skew-y-1"></div>
-              </span>
+              Global
             </h1>
 
             <p className="text-xl md:text-2xl text-neutral-600 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
@@ -64,7 +59,6 @@ export default function AboutPage() {
                 <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                   What Drives Us
                 </span>
-                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6">
                 Our Mission
@@ -112,7 +106,7 @@ export default function AboutPage() {
               <Card className="group relative border-0 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden bg-gradient-to-br from-white to-[#1C4332]/5 hover:-translate-y-1">
                 <CardContent className="p-6 text-center">
                   <div className="w-12 h-12 bg-gradient-to-br from-[#1C4332] to-[#1C4332] rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md transform group-hover:scale-110 transition-transform duration-300">
-                    <Globe2 className="w-6 h-6 text-white" />
+                    <Globe className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-neutral-900 mb-2">
                     Global Network
@@ -166,7 +160,6 @@ export default function AboutPage() {
               <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                 What We Stand For
               </span>
-              <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6">
               Our Core Values
@@ -238,7 +231,7 @@ export default function AboutPage() {
               <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardContent className="p-8 relative z-10">
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-lg">
-                  <Globe2 className="w-8 h-8 text-white" />
+                  <Globe className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-neutral-900 mb-4 group-hover:text-green-700 transition-colors duration-300">
                   Global Vision
@@ -265,7 +258,6 @@ export default function AboutPage() {
               <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                 Leadership Team
               </span>
-              <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6">
               Meet Our Founders
@@ -282,12 +274,12 @@ export default function AboutPage() {
               <CardContent className="p-10 md:p-12 relative z-10">
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-8">
-                    <div className="w-36 h-36 rounded-3xl overflow-hidden shadow-2xl transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-500">
+                    <div className="w-48 h-48 rounded-3xl overflow-hidden shadow-2xl transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-500">
                       <Image
-                        src="/jospeh.jpeg"
+                        src="/joseph-horizontal.jpeg"
                         alt="Joseph Cohen - Co-Founder"
-                        width={144}
-                        height={144}
+                        width={192}
+                        height={192}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -315,16 +307,11 @@ export default function AboutPage() {
                       international background, as well as several experiences
                       in finance.
                     </p>
-                    <div className="relative p-5 bg-gradient-to-br from-green-50 to-accent-beige/30 rounded-xl border-l-4 border-green-500">
-                      <div className="flex items-start gap-3">
-                        <Zap className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-                        <p className="text-neutral-700 leading-relaxed text-sm">
-                          Developing expertise in entrepreneurship, automation,
-                          AI, and no-code solutions to optimize clients&apos;
-                          operations and accelerate their growth.
-                        </p>
-                      </div>
-                    </div>
+                    <p className="text-neutral-700 leading-relaxed">
+                      Developing expertise in entrepreneurship, automation,
+                      AI, and no-code solutions to optimize clients&apos;
+                      operations and accelerate their growth.
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -336,12 +323,12 @@ export default function AboutPage() {
               <CardContent className="p-10 md:p-12 relative z-10">
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-8">
-                    <div className="w-36 h-36 rounded-3xl overflow-hidden shadow-2xl transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-500">
+                    <div className="w-48 h-48 rounded-3xl overflow-hidden shadow-2xl transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-500">
                       <Image
-                        src="/elioth.jpeg"
+                        src="/elioth-horizontal.jpeg"
                         alt="Elioth Mizrahi - Co-Founder"
-                        width={144}
-                        height={144}
+                        width={192}
+                        height={192}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -367,16 +354,11 @@ export default function AboutPage() {
                       businesses worldwide with reliable, high-quality
                       manufacturers across Asia, Europe, and the Middle East.
                     </p>
-                    <div className="relative p-5 bg-gradient-to-br from-green-50 to-accent-beige/30 rounded-xl border-l-4 border-green-500">
-                      <div className="flex items-start gap-3">
-                        <Award className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-                        <p className="text-neutral-700 leading-relaxed text-sm">
-                          Expertise strengthened by studies at Reichman
-                          University, developing knowledge in entrepreneurship,
-                          business strategy, and innovation.
-                        </p>
-                      </div>
-                    </div>
+                    <p className="text-neutral-700 leading-relaxed">
+                      Expertise strengthened by studies at Reichman
+                      University, developing knowledge in entrepreneurship,
+                      business strategy, and innovation.
+                    </p>
                   </div>
                 </div>
               </CardContent>

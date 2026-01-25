@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -70,7 +70,7 @@
 }
 
 :root {
-  --radius: 0.5rem;
+  --radius: 0.25rem;
   --background: #FFFFFF;
   --foreground: #3F3F46;
   --card: #FFFFFF;
@@ -118,7 +118,15 @@
     font-family: 'Inter', sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2 {
+    @apply text-neutral-900;
+    font-family: var(--font-great-vibes), cursive;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+  }
+
+  h3, h4, h5, h6 {
     @apply text-neutral-900;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
@@ -198,31 +206,6 @@
   .animation-delay-600 {
     animation-delay: 0.6s;
     opacity: 0;
-  }
-
-  /* Blob Animation */
-  @keyframes blob {
-    0%, 100% {
-      transform: translate(0, 0) scale(1);
-    }
-    33% {
-      transform: translate(30px, -50px) scale(1.1);
-    }
-    66% {
-      transform: translate(-20px, 20px) scale(0.9);
-    }
-  }
-
-  .animate-blob {
-    animation: blob 7s infinite ease-in-out;
-  }
-
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-
-  .animation-delay-4000 {
-    animation-delay: 4s;
   }
 
   /* Shimmer Effect for Buttons */
@@ -358,5 +341,30 @@
 
   .border-glow-animate {
     animation: border-glow 2s ease-in-out infinite;
+  }
+
+  /* Blob Animation */
+  @keyframes blob {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite ease-in-out;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
   }
 }

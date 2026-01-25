@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   ArrowRight,
-  Globe2,
+  Globe,
   Shield,
   TruckIcon,
   Search,
@@ -32,7 +32,7 @@ export default function HomePage() {
         "End-to-end shipping coordination with expert customs handling. We navigate regulations so your shipments arrive on time, without delays.",
     },
     {
-      icon: Globe2,
+      icon: Globe,
       title: "Global Network",
       description:
         "Operations spanning Middle East, Israel, and Europe with local expertise to manage regional compliance and market-specific risks.",
@@ -55,18 +55,13 @@ export default function HomePage() {
           <div className="absolute top-40 right-10 w-72 h-72 bg-accent-beige rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
           <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
-
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03]"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-neutral-900 mb-8 leading-tight animate-fade-in-up animation-delay-200">
               International Trading
-              <br />
-              <span className="relative inline-block">
-                <span className="text-gradient">& Sourcing</span>
-                <div className="absolute -bottom-2 left-0 right-0 h-3 bg-green-200 opacity-30 -z-10 transform -skew-y-1"></div>
-              </span>
+              <br />& Sourcing
             </h1>
 
             <p className="text-lg md:text-xl text-neutral-600 mb-6 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
@@ -101,9 +96,15 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-neutral-300 hover:border-green-600 text-neutral-700 hover:text-green-700 font-semibold px-8 py-6 text-base rounded-xl transition-all duration-200 bg-white/50 backdrop-blur-sm"
+                  className="group relative border-2 border-neutral-300 hover:border-green-600 text-neutral-700 hover:text-white font-semibold px-8 py-6 text-base rounded-xl transition-all duration-300 bg-white/50 backdrop-blur-sm hover:shadow-xl hover:-translate-y-0.5 overflow-hidden"
                 >
-                  View Services
+                  {/* Gradient slide-in background on hover */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-700 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
+
+                  <span className="relative flex items-center gap-2">
+                    View Services
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
                 </Button>
               </Link>
             </div>
@@ -138,7 +139,6 @@ export default function HomePage() {
                 <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                   What We Offer
                 </span>
-                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
                 Complete Trade Solutions
@@ -206,83 +206,66 @@ export default function HomePage() {
       </section>
 
       {/* How We Work Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-green-50/30 via-white to-accent-beige/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="mb-4">
-                <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
-                  How We Work
-                </span>
-                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
-              </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
-                Simple, Structured, Fully Controlled
-              </h2>
-              <p className="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-                Every step is monitored and controlled to eliminate risks before
-                they reach you. From factory verification to final delivery,
-                your operations are secured.
-              </p>
-            </div>
+      <section className="py-16 md:py-24 bg-gradient-to-br from-green-50 via-accent-blue-gray/30 to-white relative overflow-hidden">
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-100 rounded-full filter blur-3xl opacity-20"></div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="mb-4">
+              <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
+                How We Work
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
+              Our Process
+            </h2>
+            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+              A fully controlled approach that eliminates risks at every stage,
+              from concept to delivery
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
                 {
-                  step: "01",
-                  title: "Factory Verification",
-                  description:
-                    "Comprehensive vetting of manufacturers through on-site audits, certifications review, and production capability assessment.",
+                  step: 1,
+                  title: "Discovery",
+                  description: "Understand requirements and specifications",
                 },
                 {
-                  step: "02",
-                  title: "Sampling & Validation",
-                  description:
-                    "Product samples reviewed against your specifications. No production starts until you approve quality, materials, and finish.",
+                  step: 2,
+                  title: "Sourcing",
+                  description: "Identify and verify suitable manufacturers",
                 },
                 {
-                  step: "03",
-                  title: "Production Monitoring",
-                  description:
-                    "Ongoing oversight during manufacturing with regular updates, quality checks, and timeline management.",
+                  step: 3,
+                  title: "Production",
+                  description: "Monitor manufacturing and quality control",
                 },
                 {
-                  step: "04",
-                  title: "Final Inspection & Delivery",
-                  description:
-                    "Pre-shipment inspection, compliance verification, and coordinated logistics to ensure on-time delivery.",
+                  step: 4,
+                  title: "Logistics",
+                  description: "Coordinate shipping and delivery",
                 },
               ].map((item, index) => (
                 <div key={item.step} className="relative group">
-                  <div className="flex gap-6">
-                    {/* Step Number */}
-                    <div
-                      className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 shadow-lg"
-                      style={{
-                        background:
-                          "linear-gradient(to bottom right, #1C4332, #245940)",
-                      }}
-                    >
-                      <span className="text-2xl font-bold text-white">
-                        {item.step}
-                      </span>
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-1 pt-1">
-                      <h3 className="text-xl font-bold text-neutral-900 mb-3">
-                        {item.title}
-                      </h3>
-                      <p className="text-neutral-600 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Connecting Line (hidden on last item in each column on mobile) */}
+                  {/* Connector Line */}
                   {index < 3 && (
-                    <div className="hidden md:block absolute left-8 top-20 w-0.5 h-12 bg-gradient-to-b from-green-300 to-transparent"></div>
+                    <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-gradient-to-r from-green-400 to-green-200"></div>
                   )}
+
+                  <div className="relative text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-2xl flex items-center justify-center font-bold text-2xl mx-auto mb-4 shadow-lg transform group-hover:scale-110 group-hover:-rotate-3 transition-all duration-300 relative z-10">
+                      {item.step}
+                    </div>
+                    <h3 className="font-bold text-neutral-900 mb-2 text-lg group-hover:text-green-700 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-neutral-600">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -291,76 +274,108 @@ export default function HomePage() {
       </section>
 
       {/* Real Risks We Eliminate Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-red-50/30 via-white to-white">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-red-50/30 via-white to-white relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="mb-4">
+            {/* Section Header */}
+            <div className="text-center mb-12">
+              <div className="mb-3">
                 <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                   Real Risks We Eliminate
                 </span>
-                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
                 We Secure Your Operations, Not Just Find Suppliers
               </h2>
-              <p className="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-                International sourcing comes with hidden dangers. We identify
-                and eliminate these risks before they impact your business, so
-                you can focus on growth.
+              <p className="text-lg text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+                International sourcing involves serious operational risks—scams,
+                quality failures, compliance traps, logistical disasters. We
+                don&apos;t just warn you about them; we eliminate them before
+                they impact your business.
               </p>
             </div>
 
+            {/* Risk Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                {
-                  title: "No Fake Factories",
-                  description:
-                    "We verify every manufacturer through on-site visits, background checks, and compliance audits. No shell companies, no middlemen posing as factories.",
-                },
-                {
-                  title: "No Hidden MOQ Traps",
-                  description:
-                    "Transparent minimum order quantities from day one. No surprise requirements after you've invested time and money in samples.",
-                },
-                {
-                  title: "No Quality Mismatches",
-                  description:
-                    "What you approve in samples is what you receive in production. Our multi-stage inspections ensure consistency at every batch.",
-                },
-                {
-                  title: "No Customs Nightmares",
-                  description:
-                    "Expert handling of documentation, compliance, and logistics. We navigate regulations so your shipments arrive on time, every time.",
-                },
-              ].map((risk) => (
-                <Card
-                  key={risk.title}
-                  className="group relative border-2 border-neutral-200 hover:border-green-500/30 hover:shadow-xl transition-all duration-300 overflow-hidden bg-white"
-                >
-                  <CardContent className="p-8">
-                    <div className="flex items-start gap-5">
-                      <div
-                        className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0 shadow-md"
-                        style={{
-                          background:
-                            "linear-gradient(to bottom right, #1C4332, #245940)",
-                        }}
-                      >
-                        <Shield className="w-7 h-7 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-neutral-900 mb-2">
-                          {risk.title}
-                        </h3>
-                        <p className="text-neutral-600 leading-relaxed">
-                          {risk.description}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+              {/* No Fake Factories */}
+              <Card className="group border-0 bg-white shadow-none">
+                <CardContent className="p-10">
+                  <div>
+                    <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                      No Fake Factories
+                    </h3>
+                    <p className="text-lg text-neutral-600 leading-relaxed mb-4">
+                      We verify every supplier through on-site factory visits,
+                      production audits, and compliance checks before any
+                      partnership begins.
+                    </p>
+                    <p className="text-base text-neutral-500 italic">
+                      You work with real manufacturers, not middlemen or
+                      trading companies posing as factories.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* No Hidden MOQ Traps */}
+              <Card className="group border-0 bg-white shadow-none">
+                <CardContent className="p-10">
+                  <div>
+                    <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                      No Hidden MOQ Traps
+                    </h3>
+                    <p className="text-lg text-neutral-600 leading-relaxed mb-4">
+                      Minimum order quantities are transparent from day one. No
+                      surprise requirements after you&apos;ve invested time and
+                      resources.
+                    </p>
+                    <p className="text-base text-neutral-500 italic">
+                      We negotiate realistic terms that align with your actual
+                      business needs.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* No Quality Mismatches */}
+              <Card className="group border-0 bg-white shadow-none">
+                <CardContent className="p-10">
+                  <div>
+                    <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                      No Quality Mismatches
+                    </h3>
+                    <p className="text-lg text-neutral-600 leading-relaxed mb-4">
+                      Multi-stage inspections ensure the sample you approve
+                      matches the final production batch—no substitutions, no
+                      downgrades.
+                    </p>
+                    <p className="text-base text-neutral-500 italic">
+                      What you see is what you get, with documented evidence at
+                      every stage.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* No Customs Nightmares */}
+              <Card className="group border-0 bg-white shadow-none">
+                <CardContent className="p-10">
+                  <div>
+                    <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                      No Customs Nightmares
+                    </h3>
+                    <p className="text-lg text-neutral-600 leading-relaxed mb-4">
+                      Expert handling of documentation, HS codes, and regulatory
+                      compliance to prevent delays, fines, or shipment
+                      rejections.
+                    </p>
+                    <p className="text-base text-neutral-500 italic">
+                      We navigate complex international regulations so your
+                      goods arrive on time.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
@@ -377,7 +392,6 @@ export default function HomePage() {
                   <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                     Why Choose Us
                   </span>
-                  <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mt-2"></div>
                 </div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
                   Your Trusted Partner in Global Trade
@@ -415,11 +429,10 @@ export default function HomePage() {
 
               {/* Visual Element */}
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-200 to-accent-beige rounded-3xl transform rotate-3 opacity-50"></div>
-                <Card className="relative border-0 shadow-2xl overflow-hidden">
+                <Card className="relative shadow-2xl overflow-hidden p-0">
                   <CardContent className="p-8 md:p-10 bg-gradient-to-br from-brand-primary to-green-800">
                     <div className="text-center text-white">
-                      <Globe2 className="w-16 h-16 mx-auto mb-6 opacity-90" />
+                      <Globe className="w-16 h-16 mx-auto mb-6 opacity-90" />
                       <h3 className="text-white text-2xl md:text-3xl font-bold mb-4">
                         Global Network
                       </h3>
@@ -456,7 +469,6 @@ export default function HomePage() {
                 <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                   Leadership
                 </span>
-                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-300 to-transparent mx-auto mt-2"></div>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
                 Meet Our Co-Founders
@@ -475,7 +487,7 @@ export default function HomePage() {
                 <div className="bg-white border border-neutral-200 overflow-hidden transition-all duration-300 hover:border-neutral-300 hover:shadow-xl">
                   <div className="aspect-square overflow-hidden bg-neutral-100">
                     <Image
-                      src="/jospeh.jpeg"
+                      src="/joseph-vertical.jpeg"
                       alt="Joseph Cohen - Co-Founder"
                       width={400}
                       height={400}
@@ -500,7 +512,7 @@ export default function HomePage() {
                 <div className="bg-white border border-neutral-200 overflow-hidden transition-all duration-300 hover:border-neutral-300 hover:shadow-xl">
                   <div className="aspect-square overflow-hidden bg-neutral-100">
                     <Image
-                      src="/elioth.jpeg"
+                      src="/elioth-vertical.jpeg"
                       alt="Elioth Mizrahi - Co-Founder"
                       width={400}
                       height={400}

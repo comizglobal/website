@@ -116,17 +116,12 @@ export default function ContactPage() {
           <div className="absolute top-20 left-10 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
           <div className="absolute top-40 right-10 w-72 h-72 bg-accent-beige rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
         </div>
-
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03]"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-neutral-900 mb-8 leading-tight animate-fade-in-up animation-delay-200">
-              Get in{" "}
-              <span className="relative inline-block">
-                <span className="text-gradient">Touch</span>
-                <div className="absolute -bottom-2 left-0 right-0 h-3 bg-green-200 opacity-30 -z-10 transform -skew-y-1"></div>
-              </span>
+              Get in Touch
             </h1>
 
             <p className="text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
