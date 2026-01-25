@@ -8,6 +8,7 @@ import {
   Globe,
   ArrowRight,
   Award,
+  Blend,
   TrendingUp,
 } from "lucide-react";
 
@@ -52,6 +53,17 @@ export default function AboutPage() {
         {/* Subtle Background Decoration */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-green-50 rounded-full filter blur-3xl opacity-30 -z-0"></div>
 
+        {/* Logo Blend Background */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-[0.02] pointer-events-none">
+          <Image
+            src="/logo.png"
+            alt=""
+            width={800}
+            height={800}
+            className="w-full max-w-4xl object-contain mix-blend-multiply"
+          />
+        </div>
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
@@ -83,14 +95,11 @@ export default function AboutPage() {
                       quality, cost control, and a reliable supply chain from
                       factory verification to final delivery.
                     </p>
-                    <div className="relative p-6 bg-gradient-to-br from-[#1C4332]/5 to-accent-beige/30 rounded-2xl border-l-4 border-[#1C4332]">
-                      <div className="flex items-start gap-4">
-                        <Award className="w-6 h-6 text-[#1C4332] shrink-0 mt-1" />
-                        <p className="text-lg md:text-xl text-neutral-900 font-semibold leading-relaxed">
-                          Quality is never an accident - it&apos;s a process.
-                        </p>
-                      </div>
-                      <p className="text-base text-neutral-700 mt-4 ml-10">
+                    <div className="relative p-6 bg-gradient-to-br from-[#1C4332]/5 to-accent-beige/30 rounded-2xl">
+                      <p className="text-lg md:text-xl text-neutral-900 font-semibold leading-relaxed mb-4">
+                        Quality is never an accident - it&apos;s a process.
+                      </p>
+                      <p className="text-base text-neutral-700">
                         Every partnership we forge, every supplier we verify,
                         and every shipment we manage reflects our commitment to
                         excellence and transparency.
@@ -120,7 +129,7 @@ export default function AboutPage() {
               <Card className="group relative border-0 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden bg-gradient-to-br from-white to-[#1C4332]/5 hover:-translate-y-1">
                 <CardContent className="p-6 text-center">
                   <div className="w-12 h-12 bg-gradient-to-br from-[#1C4332] to-[#1C4332] rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md transform group-hover:scale-110 transition-transform duration-300">
-                    <Shield className="w-6 h-6 text-white" />
+                    <Blend className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-neutral-900 mb-2">
                     Full Transparency
@@ -308,9 +317,9 @@ export default function AboutPage() {
                       in finance.
                     </p>
                     <p className="text-neutral-700 leading-relaxed">
-                      Developing expertise in entrepreneurship, automation,
-                      AI, and no-code solutions to optimize clients&apos;
-                      operations and accelerate their growth.
+                      Developing expertise in entrepreneurship, automation, AI,
+                      and no-code solutions to optimize clients&apos; operations
+                      and accelerate their growth.
                     </p>
                   </div>
                 </div>
@@ -355,9 +364,9 @@ export default function AboutPage() {
                       manufacturers across Asia, Europe, and the Middle East.
                     </p>
                     <p className="text-neutral-700 leading-relaxed">
-                      Expertise strengthened by studies at Reichman
-                      University, developing knowledge in entrepreneurship,
-                      business strategy, and innovation.
+                      Expertise strengthened by studies at Reichman University,
+                      developing knowledge in entrepreneurship, business
+                      strategy, and innovation.
                     </p>
                   </div>
                 </div>
