@@ -39,7 +39,7 @@ export default function AboutPage() {
               Global
             </h1>
 
-            <p className="text-xl md:text-2xl text-neutral-600 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
+            <p className="text-lg sm:text-xl md:text-2xl text-neutral-600 mb-12 max-w-[280px] sm:max-w-2xl md:max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
               We secure your operations at every step. Building bridges between
               businesses and verified manufacturers while eliminating sourcing
               risks before they impact you.
@@ -283,13 +283,13 @@ export default function AboutPage() {
               <CardContent className="p-10 md:p-12 relative z-10">
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-8">
-                    <div className="w-48 h-48 rounded-3xl overflow-hidden shadow-2xl transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-500">
+                    <div className="w-48 h-48 rounded-3xl overflow-hidden shadow-2xl object-cover transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-500">
                       <Image
-                        src="/joseph-horizontal.jpeg"
+                        src="/images/Joseph.jpeg"
                         alt="Joseph Cohen - Co-Founder"
                         width={192}
-                        height={192}
-                        className="w-full h-full object-cover"
+                        height={175}
+                        className="w-full h-48 object-cover"
                       />
                     </div>
                   </div>
@@ -334,7 +334,7 @@ export default function AboutPage() {
                   <div className="relative mb-8">
                     <div className="w-48 h-48 rounded-3xl overflow-hidden shadow-2xl transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-500">
                       <Image
-                        src="/elioth-horizontal.jpeg"
+                        src="/images/Elioth.png"
                         alt="Elioth Mizrahi - Co-Founder"
                         width={192}
                         height={192}

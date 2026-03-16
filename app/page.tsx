@@ -14,25 +14,25 @@ import {
 export default function HomePage() {
   const features = [
     {
-      icon: Search,
+      image: "/images/global.png",
       title: "Sourcing & Procurement",
       description:
         "Direct access to verified manufacturers with comprehensive risk assessment. We eliminate fake factories and middlemen before they impact your business.",
     },
     {
-      icon: Shield,
+      image: "/images/quality.png",
       title: "Quality Assurance",
       description:
         "Multi-stage inspections and quality control to prevent product mismatches. What you approve is what you receive—no surprises.",
     },
     {
-      icon: TruckIcon,
+      image: "/images/truck.png",
       title: "Logistics Management",
       description:
         "End-to-end shipping coordination with expert customs handling. We navigate regulations so your shipments arrive on time, without delays.",
     },
     {
-      icon: Globe,
+      image: "/images/global.png",
       title: "Global Network",
       description:
         "Operations spanning Middle East, Israel, and Europe with local expertise to manage regional compliance and market-specific risks.",
@@ -84,7 +84,7 @@ export default function HomePage() {
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="bg-brand-primary hover:bg-green-700 text-white font-semibold px-8 py-6 text-base rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl shimmer-hover group"
+                  className="bg-brand-primary hover:bg-green-700 text-white font-semibold px-8 py-6 text-base rounded-full transition-all duration-200 shadow-lg hover:shadow-xl shimmer-hover group"
                 >
                   <span className="flex items-center gap-2">
                     Get In Touch
@@ -96,7 +96,7 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="group relative border-2 border-neutral-300 hover:border-green-600 text-neutral-700 hover:text-white font-semibold px-8 py-6 text-base rounded-xl transition-all duration-300 bg-white/50 backdrop-blur-sm hover:shadow-xl hover:-translate-y-0.5 overflow-hidden"
+                  className="group relative border-2 border-neutral-300 hover:border-green-600 text-neutral-700 hover:text-white font-semibold px-8 py-6 text-base rounded-full transition-all duration-300 bg-white/50 backdrop-blur-sm hover:shadow-xl hover:-translate-y-0.5 overflow-hidden"
                 >
                   {/* Gradient slide-in background on hover */}
                   <span className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-700 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
@@ -159,14 +159,14 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <CardContent className="p-8 relative z-10">
                     <div className="flex items-start gap-5">
-                      <div
-                        className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0 shadow-md transform group-hover:scale-110 transition-transform duration-300"
-                        style={{
-                          background:
-                            "linear-gradient(to bottom right, #1C4332, #245940)",
-                        }}
-                      >
-                        <feature.icon className="w-7 h-7 text-white" />
+                      <div className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0 shadow-md transform group-hover:scale-110 transition-transform duration-300">
+                        <Image
+                          src={feature.image}
+                          alt={feature.title}
+                          width={28}
+                          height={28}
+                          className="object-contain brightness-0 saturate-100"
+                        />
                       </div>
                       <div>
                         <h3
@@ -278,17 +278,17 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
-            <div className="text-center mb-12">
+            <div className="text-center mb-10 md:mb-12">
               <div className="mb-3">
-                <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
+                <span className="text-xs sm:text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                   Real Risks We Eliminate
                 </span>
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
                 We Secure Your Operations, Not Just Find Suppliers
               </h2>
-              <p className="text-lg text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-                International sourcing involves serious operational risks—scams,
+              <p className="text-base sm:text-lg text-neutral-600 max-w-[300px] sm:max-w-3xl mx-auto leading-relaxed">
+                International sourcing involves serious operational risks-scams,
                 quality failures, compliance traps, logistical disasters. We
                 don&apos;t just warn you about them; we eliminate them before
                 they impact your business.
@@ -296,20 +296,21 @@ export default function HomePage() {
             </div>
 
             {/* Risk Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-6">
               {/* No Fake Factories */}
               <Card className="group border-0 bg-white shadow-none">
-                <CardContent className="p-10">
-                  <div>
-                    <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                <CardContent className="p-6 sm:p-8 md:p-10">
+                  <div className="text-center md:text-left">
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-3 md:mb-4">
                       No Fake Factories
                     </h3>
-                    <p className="text-lg text-neutral-600 leading-relaxed mb-4">
+                    <p className="text-base sm:text-lg text-neutral-600 leading-relaxed mb-3 md:mb-4">
                       We verify every supplier through on-site factory visits,
                       production audits, and compliance checks before any
                       partnership begins.
                     </p>
-                    <p className="text-base text-neutral-500 italic">
+                    <p className="text-sm sm:text-base text-neutral-500 italic leading-relaxed">
                       You work with real manufacturers, not middlemen or
                       trading companies posing as factories.
                     </p>
@@ -319,17 +320,17 @@ export default function HomePage() {
 
               {/* No Hidden MOQ Traps */}
               <Card className="group border-0 bg-white shadow-none">
-                <CardContent className="p-10">
-                  <div>
-                    <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                <CardContent className="p-6 sm:p-8 md:p-10">
+                  <div className="text-center md:text-left">
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-3 md:mb-4">
                       No Hidden MOQ Traps
                     </h3>
-                    <p className="text-lg text-neutral-600 leading-relaxed mb-4">
+                    <p className="text-base sm:text-lg text-neutral-600 leading-relaxed mb-3 md:mb-4">
                       Minimum order quantities are transparent from day one. No
                       surprise requirements after you&apos;ve invested time and
                       resources.
                     </p>
-                    <p className="text-base text-neutral-500 italic">
+                    <p className="text-sm sm:text-base text-neutral-500 italic leading-relaxed">
                       We negotiate realistic terms that align with your actual
                       business needs.
                     </p>
@@ -339,17 +340,17 @@ export default function HomePage() {
 
               {/* No Quality Mismatches */}
               <Card className="group border-0 bg-white shadow-none">
-                <CardContent className="p-10">
-                  <div>
-                    <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                <CardContent className="p-6 sm:p-8 md:p-10">
+                  <div className="text-center md:text-left">
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-3 md:mb-4">
                       No Quality Mismatches
                     </h3>
-                    <p className="text-lg text-neutral-600 leading-relaxed mb-4">
+                    <p className="text-base sm:text-lg text-neutral-600 leading-relaxed mb-3 md:mb-4">
                       Multi-stage inspections ensure the sample you approve
                       matches the final production batch—no substitutions, no
                       downgrades.
                     </p>
-                    <p className="text-base text-neutral-500 italic">
+                    <p className="text-sm sm:text-base text-neutral-500 italic leading-relaxed">
                       What you see is what you get, with documented evidence at
                       every stage.
                     </p>
@@ -359,17 +360,17 @@ export default function HomePage() {
 
               {/* No Customs Nightmares */}
               <Card className="group border-0 bg-white shadow-none">
-                <CardContent className="p-10">
-                  <div>
-                    <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                <CardContent className="p-6 sm:p-8 md:p-10">
+                  <div className="text-center md:text-left">
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-3 md:mb-4">
                       No Customs Nightmares
                     </h3>
-                    <p className="text-lg text-neutral-600 leading-relaxed mb-4">
+                    <p className="text-base sm:text-lg text-neutral-600 leading-relaxed mb-3 md:mb-4">
                       Expert handling of documentation, HS codes, and regulatory
                       compliance to prevent delays, fines, or shipment
                       rejections.
                     </p>
-                    <p className="text-base text-neutral-500 italic">
+                    <p className="text-sm sm:text-base text-neutral-500 italic leading-relaxed">
                       We navigate complex international regulations so your
                       goods arrive on time.
                     </p>
@@ -385,33 +386,33 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-gradient-to-br from-green-50 via-accent-blue-gray/30 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-center">
               {/* Content */}
-              <div>
+              <div className="text-center lg:text-left">
                 <div className="mb-4">
-                  <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
+                  <span className="text-xs sm:text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                     Why Choose Us
                   </span>
                 </div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-5 md:mb-6">
                   Your Trusted Partner in Global Trade
                 </h2>
-                <p className="text-xl text-neutral-700 mb-4 leading-relaxed font-medium">
+                <p className="text-base sm:text-lg md:text-xl text-neutral-700 mb-4 leading-relaxed font-medium max-w-[300px] sm:max-w-2xl lg:max-w-none mx-auto lg:mx-0">
                   We secure your operations at every step. The right partnership
                   eliminates risks and makes everything possible.
                 </p>
-                <div className="space-y-4 mb-8">
+                <div className="space-y-3 md:space-y-4 mb-8 max-w-[320px] sm:max-w-2xl lg:max-w-none mx-auto lg:mx-0">
                   {[
                     "Verified Suppliers Only — audits, factory visits, background checks, full compliance",
                     "Transparent Communication — clear reporting at every stage",
                     "Quality First — systematic inspections, international standards",
                     "On-Time Delivery — efficient supply chain coverage across Asia, Europe, and the Middle East",
                   ].map((item) => (
-                    <div key={item} className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                    <div key={item} className="flex items-start lg:items-center gap-3 text-left">
+                      <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center shrink-0 mt-0.5 lg:mt-0">
                         <CheckCircle2 className="w-4 h-4 text-green-600" />
                       </div>
-                      <span className="text-neutral-700 font-medium">
+                      <span className="text-sm sm:text-base text-neutral-700 font-medium">
                         {item}
                       </span>
                     </div>
@@ -487,11 +488,11 @@ export default function HomePage() {
                 <div className="bg-white border border-neutral-200 overflow-hidden transition-all duration-300 hover:border-neutral-300 hover:shadow-xl">
                   <div className="aspect-square overflow-hidden bg-neutral-100">
                     <Image
-                      src="/joseph-vertical.jpeg"
+                      src="/images/Joseph.jpeg"
                       alt="Joseph Cohen - Co-Founder"
                       width={400}
                       height={400}
-                      className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                      className="w-full h-full object-cover object-[50%_20%] grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
                   <div className="p-6 text-center border-t border-neutral-100">
@@ -512,7 +513,7 @@ export default function HomePage() {
                 <div className="bg-white border border-neutral-200 overflow-hidden transition-all duration-300 hover:border-neutral-300 hover:shadow-xl">
                   <div className="aspect-square overflow-hidden bg-neutral-100">
                     <Image
-                      src="/elioth-vertical.jpeg"
+                      src="/images/Elioth.png"
                       alt="Elioth Mizrahi - Co-Founder"
                       width={400}
                       height={400}

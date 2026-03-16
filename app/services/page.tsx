@@ -95,7 +95,7 @@ export default function ServicesPage() {
               Our Services
             </h1>
 
-            <p className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed mb-8 animate-fade-in-up animation-delay-400">
+            <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-[280px] sm:max-w-2xl md:max-w-3xl mx-auto leading-relaxed mb-8 animate-fade-in-up animation-delay-400">
               From factory verification to final delivery, every step is
               controlled. We secure your operations by eliminating sourcing
               risks before they impact your business.
@@ -121,14 +121,14 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="mb-4">
-              <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
+              <span className="text-xs sm:text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                 What We Offer
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
               End-to-End Trade Support
             </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-neutral-600 max-w-[280px] sm:max-w-2xl mx-auto">
               We control and secure every stage of your supply chain to
               eliminate risks before they reach you
             </p>
