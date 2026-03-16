@@ -18,25 +18,25 @@ export const metadata = {
 
 const services = [
   {
-    icon: Search,
+    image: "/images/product-management.png",
     title: "Sourcing & Procurement",
     description:
       "We identify and eliminate fake factories and unreliable suppliers before they impact your business. Complete risk assessment and verification for consumer electronics, home goods, fashion accessories, and trending products.",
   },
   {
-    icon: ShieldCheck,
+    image: "/images/quality-assurance.png",
     title: "Quality Control",
     description:
       "Multi-stage inspections eliminate quality mismatches. We ensure what you approve is what you receive—no surprises in production.",
   },
   {
-    icon: Factory,
+    image: "/images/global.png",
     title: "Production Management",
     description:
       "Full control and oversight of manufacturing to prevent delays and quality issues. Regular updates keep your project secured, on schedule, and within budget.",
   },
   {
-    icon: TruckIcon,
+    image: "/images/truck.png",
     title: "Logistics & Delivery",
     description:
       "Expert customs handling eliminates shipping delays and compliance issues. We navigate regulations so your shipments arrive on time across Middle East, Israel, and Europe.",
@@ -145,8 +145,17 @@ export default function ServicesPage() {
 
                 <CardContent className="p-8 relative z-10">
                   <div className="flex items-start gap-5 mb-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-[#1C4332] to-[#1C4332] rounded-xl flex items-center justify-center shrink-0 shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                      <service.icon className="w-7 h-7 text-white" />
+                    <div className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0 shadow-md transform group-hover:scale-110 transition-transform duration-300">
+                      {/* <service.image className="w-7 h-7 text-white" /> */}
+
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        width={28}
+                        height={28}
+                        className="object-contain brightness-0 saturate-100"
+                      />
+
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-neutral-900 mb-2 group-hover:text-[#1C4332] transition-colors duration-300">

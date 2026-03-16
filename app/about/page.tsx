@@ -280,16 +280,17 @@ export default function AboutPage() {
             {/* Joseph Cohen */}
             <Card className="group relative border-0 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden bg-gradient-to-br from-white via-green-50/20 to-white hover:-translate-y-2">
               <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 via-green-500/5 to-green-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
               <CardContent className="p-10 md:p-12 relative z-10">
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-8">
-                    <div className="w-48 h-48 rounded-3xl overflow-hidden shadow-2xl object-cover transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-500">
+                    <div className="relative w-48 h-48 rounded-3xl overflow-hidden shadow-2xl transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-500">
                       <Image
                         src="/images/Joseph.jpeg"
                         alt="Joseph Cohen - Co-Founder"
-                        width={192}
-                        height={175}
-                        className="w-full h-48 object-cover"
+                        fill
+                        sizes="192px"
+                        className="object-cover object-[center_20%]"
                       />
                     </div>
                   </div>
@@ -297,6 +298,7 @@ export default function AboutPage() {
                   <h3 className="text-3xl font-bold text-neutral-900 mb-2 group-hover:text-green-700 transition-colors duration-300">
                     Joseph Cohen
                   </h3>
+
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 rounded-full mb-8">
                     <span className="text-green-700 font-semibold text-sm">
                       Co-Founder
@@ -306,20 +308,19 @@ export default function AboutPage() {
                   <div className="text-left space-y-4">
                     <p className="text-neutral-700 leading-relaxed">
                       Joseph Cohen co-founded CoMiz with the ambition of helping
-                      entrepreneurs achieve their goals in the import-export
-                      industry by connecting them with reliable, high-quality
-                      suppliers across Asia, Europe, and the Middle East.
+                      entrepreneurs achieve their goals in the import-export industry by
+                      connecting them with reliable, high-quality suppliers across Asia,
+                      Europe, and the Middle East.
                     </p>
                     <p className="text-neutral-700 leading-relaxed">
-                      He brings a strong interest in global trade, buy-sell
-                      strategy, and negotiation, strengthened by an
-                      international background, as well as several experiences
-                      in finance.
+                      He brings a strong interest in global trade, buy-sell strategy, and
+                      negotiation, strengthened by an international background, as well as
+                      several experiences in finance.
                     </p>
                     <p className="text-neutral-700 leading-relaxed">
-                      Developing expertise in entrepreneurship, automation, AI,
-                      and no-code solutions to optimize clients&apos; operations
-                      and accelerate their growth.
+                      Developing expertise in entrepreneurship, automation, AI, and
+                      no-code solutions to optimize clients&apos; operations and
+                      accelerate their growth.
                     </p>
                   </div>
                 </div>
@@ -329,16 +330,17 @@ export default function AboutPage() {
             {/* Elioth Mizrahi */}
             <Card className="group relative border-0 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden bg-gradient-to-br from-white via-green-50/20 to-white hover:-translate-y-2">
               <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 via-green-500/5 to-green-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
               <CardContent className="p-10 md:p-12 relative z-10">
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-8">
-                    <div className="w-48 h-48 rounded-3xl overflow-hidden shadow-2xl transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-500">
+                    <div className="relative w-48 h-48 rounded-3xl overflow-hidden shadow-2xl transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-500">
                       <Image
                         src="/images/Elioth.png"
                         alt="Elioth Mizrahi - Co-Founder"
-                        width={192}
-                        height={192}
-                        className="w-full h-full object-cover"
+                        fill
+                        sizes="192px"
+                        className="object-cover object-center"
                       />
                     </div>
                   </div>
@@ -346,6 +348,7 @@ export default function AboutPage() {
                   <h3 className="text-3xl font-bold text-neutral-900 mb-2 group-hover:text-green-700 transition-colors duration-300">
                     Elioth Mizrahi
                   </h3>
+
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 rounded-full mb-8">
                     <span className="text-green-700 font-semibold text-sm">
                       Co-Founder
@@ -354,19 +357,17 @@ export default function AboutPage() {
 
                   <div className="text-left space-y-4">
                     <p className="text-neutral-700 leading-relaxed">
-                      Elioth Mizrahi is the Co-Founder of CoMiz Global, bringing
-                      a strong interest in global trade, negotiation, and
-                      international sourcing.
+                      Elioth Mizrahi is the Co-Founder of CoMiz Global, bringing a strong
+                      interest in global trade, negotiation, and international sourcing.
                     </p>
                     <p className="text-neutral-700 leading-relaxed">
-                      He co-created the company with the ambition to connect
-                      businesses worldwide with reliable, high-quality
-                      manufacturers across Asia, Europe, and the Middle East.
+                      He co-created the company with the ambition to connect businesses
+                      worldwide with reliable, high-quality manufacturers across Asia,
+                      Europe, and the Middle East.
                     </p>
                     <p className="text-neutral-700 leading-relaxed">
-                      Expertise strengthened by studies at Reichman University,
-                      developing knowledge in entrepreneurship, business
-                      strategy, and innovation.
+                      Expertise strengthened by studies at Reichman University, developing
+                      knowledge in entrepreneurship, business strategy, and innovation.
                     </p>
                   </div>
                 </div>

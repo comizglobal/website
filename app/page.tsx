@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -5,16 +8,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   ArrowRight,
   Globe,
-  Shield,
-  TruckIcon,
-  Search,
   CheckCircle2,
 } from "lucide-react";
 
 export default function HomePage() {
   const features = [
     {
-      image: "/images/global.png",
+      image: "/images/product-management.png",
       title: "Sourcing & Procurement",
       description:
         "Direct access to verified manufacturers with comprehensive risk assessment. We eliminate fake factories and middlemen before they impact your business.",
@@ -45,6 +45,41 @@ export default function HomePage() {
     { value: "24h", label: "Response Time" },
   ];
 
+  useEffect(() => {
+    const elements = document.querySelectorAll("[data-reveal]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const target = entry.target as HTMLElement;
+          if (entry.isIntersecting) {
+            target.classList.add("animate-fade-in-up");
+            target.style.opacity = "1";
+            target.style.transform = "translateY(0)";
+            observer.unobserve(target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px",
+      }
+    );
+
+    elements.forEach((el, index) => {
+      const htmlEl = el as HTMLElement;
+      const delay = htmlEl.dataset.delay || `${index * 80}ms`;
+      htmlEl.style.opacity = "0";
+      htmlEl.style.transform = "translateY(32px)";
+      htmlEl.style.transition =
+        "opacity 0.7s ease, transform 0.7s ease, box-shadow 0.3s ease, border-color 0.3s ease";
+      htmlEl.style.transitionDelay = delay;
+      observer.observe(htmlEl);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -59,32 +94,48 @@ export default function HomePage() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-neutral-900 mb-8 leading-tight animate-fade-in-up animation-delay-200">
+            <h1
+              data-reveal
+              data-delay="100ms"
+              className="text-4xl md:text-5xl lg:text-7xl font-bold text-neutral-900 mb-8 leading-tight"
+            >
               International Trading
               <br />& Sourcing
             </h1>
 
-            <p className="text-lg md:text-xl text-neutral-600 mb-6 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
+            <p
+              data-reveal
+              data-delay="220ms"
+              className="text-lg md:text-xl text-neutral-600 mb-6 max-w-3xl mx-auto leading-relaxed"
+            >
               Global Sourcing. Reliable Partners. Smarter Trade.
             </p>
 
             {/* Region Pills */}
-            <div className="flex flex-wrap justify-center gap-3 mb-10 animate-fade-in-up animation-delay-400">
+            <div
+              data-reveal
+              data-delay="320ms"
+              className="flex flex-wrap justify-center gap-3 mb-10"
+            >
               {["China", "Middle East", "Israel", "Europe"].map((region) => (
                 <span
                   key={region}
-                  className="px-4 py-2 bg-white/60 backdrop-blur-sm border border-green-200/50 rounded-full text-sm font-medium text-neutral-700"
+                  className="px-4 py-2 bg-white/60 backdrop-blur-sm border border-green-200/50 rounded-full text-sm font-medium text-neutral-700 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300"
                 >
                   {region}
                 </span>
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-600">
+            <div
+              data-reveal
+              data-delay="420ms"
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="bg-brand-primary hover:bg-green-700 text-white font-semibold px-8 py-6 text-base rounded-full transition-all duration-200 shadow-lg hover:shadow-xl shimmer-hover group"
+                  className="bg-brand-primary hover:bg-green-700 text-white font-semibold px-8 py-6 text-base rounded-full transition-all duration-200 shadow-lg hover:shadow-xl shimmer-hover group hover:-translate-y-0.5"
                 >
                   <span className="flex items-center gap-2">
                     Get In Touch
@@ -98,7 +149,6 @@ export default function HomePage() {
                   variant="outline"
                   className="group relative border-2 border-neutral-300 hover:border-green-600 text-neutral-700 hover:text-white font-semibold px-8 py-6 text-base rounded-full transition-all duration-300 bg-white/50 backdrop-blur-sm hover:shadow-xl hover:-translate-y-0.5 overflow-hidden"
                 >
-                  {/* Gradient slide-in background on hover */}
                   <span className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-700 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
 
                   <span className="relative flex items-center gap-2">
@@ -117,8 +167,13 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-3 gap-8">
-              {stats.map((stat) => (
-                <div key={stat.label} className="text-center">
+              {stats.map((stat, index) => (
+                <div
+                  key={stat.label}
+                  data-reveal
+                  data-delay={`${index * 120}ms`}
+                  className="text-center hover:-translate-y-1 transition-transform duration-300"
+                >
                   <div className="text-3xl md:text-4xl font-bold text-gradient mb-1">
                     {stat.value}
                   </div>
@@ -134,7 +189,7 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
+            <div data-reveal className="text-center mb-16">
               <div className="mb-4">
                 <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                   What We Offer
@@ -151,10 +206,12 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {features.map((feature) => (
+              {features.map((feature, index) => (
                 <Card
                   key={feature.title}
-                  className="group relative border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden bg-gradient-to-br from-white to-green-50/20 card-glow"
+                  data-reveal
+                  data-delay={`${index * 120}ms`}
+                  className="group relative border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden bg-gradient-to-br from-white to-green-50/20 card-glow hover:-translate-y-1"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <CardContent className="p-8 relative z-10">
@@ -192,7 +249,7 @@ export default function HomePage() {
               ))}
             </div>
 
-            <div className="text-center mt-12">
+            <div data-reveal data-delay="120ms" className="text-center mt-12">
               <Link
                 href="/services"
                 className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold group"
@@ -210,7 +267,7 @@ export default function HomePage() {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-100 rounded-full filter blur-3xl opacity-20"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
+          <div data-reveal className="text-center mb-16">
             <div className="mb-4">
               <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                 How We Work
@@ -249,8 +306,12 @@ export default function HomePage() {
                   description: "Coordinate shipping and delivery",
                 },
               ].map((item, index) => (
-                <div key={item.step} className="relative group">
-                  {/* Connector Line */}
+                <div
+                  key={item.step}
+                  data-reveal
+                  data-delay={`${index * 120}ms`}
+                  className="relative group"
+                >
                   {index < 3 && (
                     <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-gradient-to-r from-green-400 to-green-200"></div>
                   )}
@@ -277,8 +338,7 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-gradient-to-br from-red-50/30 via-white to-white relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            {/* Section Header */}
-            <div className="text-center mb-10 md:mb-12">
+            <div data-reveal className="text-center mb-10 md:mb-12">
               <div className="mb-3">
                 <span className="text-xs sm:text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                   Real Risks We Eliminate
@@ -295,11 +355,12 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Risk Cards Grid */}
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-6">
-              {/* No Fake Factories */}
-              <Card className="group border-0 bg-white shadow-none">
+              <Card
+                data-reveal
+                data-delay="0ms"
+                className="group border-0 bg-white shadow-none hover:-translate-y-1 transition-transform duration-300"
+              >
                 <CardContent className="p-6 sm:p-8 md:p-10">
                   <div className="text-center md:text-left">
                     <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-3 md:mb-4">
@@ -318,8 +379,11 @@ export default function HomePage() {
                 </CardContent>
               </Card>
 
-              {/* No Hidden MOQ Traps */}
-              <Card className="group border-0 bg-white shadow-none">
+              <Card
+                data-reveal
+                data-delay="120ms"
+                className="group border-0 bg-white shadow-none hover:-translate-y-1 transition-transform duration-300"
+              >
                 <CardContent className="p-6 sm:p-8 md:p-10">
                   <div className="text-center md:text-left">
                     <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-3 md:mb-4">
@@ -338,8 +402,11 @@ export default function HomePage() {
                 </CardContent>
               </Card>
 
-              {/* No Quality Mismatches */}
-              <Card className="group border-0 bg-white shadow-none">
+              <Card
+                data-reveal
+                data-delay="240ms"
+                className="group border-0 bg-white shadow-none hover:-translate-y-1 transition-transform duration-300"
+              >
                 <CardContent className="p-6 sm:p-8 md:p-10">
                   <div className="text-center md:text-left">
                     <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-3 md:mb-4">
@@ -358,8 +425,11 @@ export default function HomePage() {
                 </CardContent>
               </Card>
 
-              {/* No Customs Nightmares */}
-              <Card className="group border-0 bg-white shadow-none">
+              <Card
+                data-reveal
+                data-delay="360ms"
+                className="group border-0 bg-white shadow-none hover:-translate-y-1 transition-transform duration-300"
+              >
                 <CardContent className="p-6 sm:p-8 md:p-10">
                   <div className="text-center md:text-left">
                     <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-3 md:mb-4">
@@ -387,8 +457,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-center">
-              {/* Content */}
-              <div className="text-center lg:text-left">
+              <div data-reveal className="text-center lg:text-left">
                 <div className="mb-4">
                   <span className="text-xs sm:text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                     Why Choose Us
@@ -407,8 +476,13 @@ export default function HomePage() {
                     "Transparent Communication — clear reporting at every stage",
                     "Quality First — systematic inspections, international standards",
                     "On-Time Delivery — efficient supply chain coverage across Asia, Europe, and the Middle East",
-                  ].map((item) => (
-                    <div key={item} className="flex items-start lg:items-center gap-3 text-left">
+                  ].map((item, index) => (
+                    <div
+                      key={item}
+                      data-reveal
+                      data-delay={`${index * 100}ms`}
+                      className="flex items-start lg:items-center gap-3 text-left"
+                    >
                       <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center shrink-0 mt-0.5 lg:mt-0">
                         <CheckCircle2 className="w-4 h-4 text-green-600" />
                       </div>
@@ -428,9 +502,8 @@ export default function HomePage() {
                 </Link>
               </div>
 
-              {/* Visual Element */}
-              <div className="relative">
-                <Card className="relative shadow-2xl overflow-hidden p-0">
+              <div data-reveal data-delay="180ms" className="relative">
+                <Card className="relative shadow-2xl overflow-hidden p-0 hover:-translate-y-1 transition-transform duration-300">
                   <CardContent className="p-8 md:p-10 bg-gradient-to-br from-brand-primary to-green-800">
                     <div className="text-center text-white">
                       <Globe className="w-16 h-16 mx-auto mb-6 opacity-90" />
@@ -445,7 +518,7 @@ export default function HomePage() {
                         {["China", "UAE", "Israel", "France"].map((country) => (
                           <span
                             key={country}
-                            className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-sm text-green-100"
+                            className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-sm text-green-100 hover:bg-white/15 transition-colors duration-300"
                           >
                             {country}
                           </span>
@@ -464,8 +537,7 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-gradient-to-b from-neutral-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            {/* Section Header */}
-            <div className="text-center mb-12">
+            <div data-reveal className="text-center mb-12">
               <div className="mb-4">
                 <span className="text-sm font-semibold text-neutral-600 uppercase tracking-wider">
                   Leadership
@@ -481,18 +553,16 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Founders Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto mb-12">
-              {/* Joseph Cohen */}
-              <div className="group">
-                <div className="bg-white border border-neutral-200 overflow-hidden transition-all duration-300 hover:border-neutral-300 hover:shadow-xl">
+              <div data-reveal data-delay="0ms" className="group">
+                <div className="bg-white border border-neutral-200 overflow-hidden transition-all duration-300 hover:border-neutral-300 hover:shadow-xl hover:-translate-y-1">
                   <div className="aspect-square overflow-hidden bg-neutral-100">
                     <Image
                       src="/images/Joseph.jpeg"
                       alt="Joseph Cohen - Co-Founder"
                       width={400}
                       height={400}
-                      className="w-full h-full object-cover object-[50%_20%] grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                      className="w-full h-full object-cover object-[50%_20%] grayscale-[20%] group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-500"
                     />
                   </div>
                   <div className="p-6 text-center border-t border-neutral-100">
@@ -503,21 +573,20 @@ export default function HomePage() {
                       Co-Founder
                     </p>
                     <div className="w-12 h-0.5 bg-green-600 mx-auto mb-3"></div>
-                    <p className="text-sm text-neutral-600">France</p>
+                    <p className="text-sm text-neutral-600">Israel</p>
                   </div>
                 </div>
               </div>
 
-              {/* Elioth Mizrahi */}
-              <div className="group">
-                <div className="bg-white border border-neutral-200 overflow-hidden transition-all duration-300 hover:border-neutral-300 hover:shadow-xl">
+              <div data-reveal data-delay="140ms" className="group">
+                <div className="bg-white border border-neutral-200 overflow-hidden transition-all duration-300 hover:border-neutral-300 hover:shadow-xl hover:-translate-y-1">
                   <div className="aspect-square overflow-hidden bg-neutral-100">
                     <Image
                       src="/images/Elioth.png"
                       alt="Elioth Mizrahi - Co-Founder"
                       width={400}
                       height={400}
-                      className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                      className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-500"
                     />
                   </div>
                   <div className="p-6 text-center border-t border-neutral-100">
@@ -534,8 +603,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Expertise Section */}
-            <div className="text-center max-w-3xl mx-auto">
+            <div data-reveal data-delay="120ms" className="text-center max-w-3xl mx-auto">
               <p className="text-base text-neutral-700 leading-relaxed mb-8">
                 With expertise spanning global trade, negotiation, finance, and
                 business strategy, our founders bring a unique blend of
@@ -547,7 +615,7 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-neutral-300 hover:border-brand-primary hover:bg-brand-primary hover:text-white text-neutral-700 font-semibold px-8 py-6 text-base transition-all duration-200 group"
+                  className="border-2 border-neutral-300 hover:border-brand-primary hover:bg-brand-primary hover:text-white text-neutral-700 font-semibold px-8 py-6 text-base transition-all duration-200 group hover:-translate-y-0.5"
                 >
                   <span className="flex items-center gap-2">
                     Learn About Our Story
@@ -564,7 +632,10 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <Card className="border-0 shadow-2xl overflow-hidden bg-gradient-to-br from-brand-primary via-green-800 to-brand-primary">
+            <Card
+              data-reveal
+              className="border-0 shadow-2xl overflow-hidden bg-gradient-to-br from-brand-primary via-green-800 to-brand-primary hover:-translate-y-1 transition-transform duration-300"
+            >
               <CardContent className="p-10 md:p-16 text-center">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                   Ready to Start Your Sourcing Project?
@@ -576,7 +647,7 @@ export default function HomePage() {
                 <Link href="/contact">
                   <Button
                     size="lg"
-                    className="bg-white hover:bg-green-50 text-brand-primary font-semibold px-8 py-6 text-base rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl group"
+                    className="bg-white hover:bg-green-50 text-brand-primary font-semibold px-8 py-6 text-base rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl group hover:-translate-y-0.5"
                   >
                     <span className="flex items-center gap-2">
                       Contact Us Today

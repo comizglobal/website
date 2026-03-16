@@ -97,7 +97,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="mailto:comiz.global@gmail.com"
+                  href="mailto:contact@comizglobal.com"
                   className="flex items-start gap-3 text-green-100 hover:text-white transition-colors group"
                 >
                   <div className="w-9 h-9 bg-green-800/50 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-green-700/50 transition-colors">
@@ -107,7 +107,7 @@ export default function Footer() {
                     <span className="text-xs text-green-400 block mb-0.5">
                       Email
                     </span>
-                    <span className="text-sm">comiz.global@gmail.com</span>
+                    <span className="text-sm">contact@comizglobal.com</span>
                   </div>
                 </a>
               </li>
@@ -129,7 +129,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+33756830342"
+                  href="tel:+97255-5002689"
                   className="flex items-start gap-3 text-green-100 hover:text-white transition-colors group"
                 >
                   <div className="w-9 h-9 bg-green-800/50 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-green-700/50 transition-colors">
@@ -139,7 +139,7 @@ export default function Footer() {
                     <span className="text-xs text-green-400 block mb-0.5">
                       Joseph Cohen (France)
                     </span>
-                    <span className="text-sm">+33-756830342</span>
+                    <span className="text-sm">+97255-5002689</span>
                   </div>
                 </a>
               </li>
