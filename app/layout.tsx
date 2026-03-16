@@ -21,6 +21,14 @@ export const metadata: Metadata = {
   title: "CoMiz Global - Global Sourcing. Reliable Partners. Smarter Trade.",
   description: "CoMiz is an international trading company specializing in sourcing, negotiation, and production management across Asia, the Middle East, and Europe.",
   keywords: ["international trading", "sourcing", "import export", "global trade", "supplier management", "Asia sourcing", "Middle East trade"],
+
+  icons: {
+    icon: "/icons/favicon.ico",
+    shortcut: "/icons/favicon.ico",
+    apple: "/icons/favicon.ico",
+  },
+
+
 };
 
 export default function RootLayout({

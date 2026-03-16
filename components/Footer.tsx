@@ -137,9 +137,9 @@ export default function Footer() {
                   </div>
                   <div>
                     <span className="text-xs text-green-400 block mb-0.5">
-                      Joseph Cohen (France)
+                      Joseph Cohen (Israel)
                     </span>
-                    <span className="text-sm">+97255-5002689</span>
+                    <span className="text-sm">+972-555002689</span>
                   </div>
                 </a>
               </li>
