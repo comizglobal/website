@@ -24,12 +24,12 @@ export const metadata: Metadata = {
   applicationName: "CoMiz Global",
   icons: {
     icon: [
-      { url: "/icons/favicon.ico", type: "image/x-icon", sizes: "16x16" },
-      { url: "/icons/favicon.ico", type: "image/x-icon", sizes: "32x32" },
-      { url: "/icons/favicon.ico", type: "image/x-icon", sizes: "48x48" },
+      { url: "/favicon.ico", type: "image/x-icon", sizes: "16x16" },
+      { url: "/favicon.ico", type: "image/x-icon", sizes: "32x32" },
+      { url: "/favicon.ico", type: "image/x-icon", sizes: "48x48" },
     ],
-    shortcut: [{ url: "/icons/favicon.ico", type: "image/x-icon" }],
-    apple: [{ url: "/icons/favicon.ico" }],
+    shortcut: [{ url: "/favicon.ico", type: "image/x-icon" }],
+    apple: [{ url: "/favicon.ico" }],
   },
   manifest: "/manifest.webmanifest",
 };
