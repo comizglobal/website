@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CoMiz Global</title>
+<meta name="description" content="Mobilier haut de gamme sur mesure, en direct des ateliers. Pour architectes, designers et promoteurs en France, en Europe et en Israël.">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* VOICE  hushed luxury, clear and reassuring: understood fast, trusted because real people stand behind it
+   IDEA   an interiors magazine spread: big photographs, short captions, a founders' page
+   PICTURE the bouclé living room facing the sea, edge to edge
+   COLOUR ivory and travertine grounds, CoMiz forest green bands and buttons, brass details
+   TYPE   Cormorant Garamond (logo serif) + Jost (logo sans)
+   LAYOUT laptop: text left / photo right, then medium bands; phone: photo, title, button, swipeable pieces, founders stacked */
+:root{color-scheme:light;--bg:#f7f3ec;--paper:#fffdf9;--trav:#ece3d4;--green:#0f3320;--green2:#1d4b33;--brass:#a8834c;--ink:#1a201b;--mute:#5d625d;--line:#ddd3c2}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 16px/1.6 Jost,"Helvetica Neue",Arial,sans-serif;overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.06;letter-spacing:-.01em;margin:0;text-wrap:balance}
+h2{font-size:clamp(32px,3.6vw,46px)}
+h3{font-size:24px;font-weight:600}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto}
+.band{padding-block:clamp(56px,7vw,96px);padding-left:max(5vw,18px);padding-right:max(5vw,18px)}
+.lead{font-size:17px;color:var(--mute);max-width:50ch;margin-top:14px}
+.eyebrow{font-size:13px;color:var(--brass);font-weight:500;margin-bottom:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;border:1px solid var(--green);text-decoration:none;font:400 15px Jost,sans-serif;cursor:pointer;transition:background .25s,color .25s;background:none;color:var(--green)}
+.btn.solid{background:var(--green);color:#f7f3ec}
+.btn.solid:hover{background:var(--green2)}
+.btn:not(.solid):hover{background:var(--green);color:#f7f3ec}
+.btn.ivory{background:#f7f3ec;color:var(--green);border-color:#f7f3ec}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:24px;padding:8px max(5vw,18px);max-width:1340px;margin:0 auto}
+.nav .logo img{height:44px;width:auto}
+.nav ul{display:flex;gap:24px;list-style:none;margin:0 0 0 auto;padding:0;font-size:15px}
+.nav ul a{text-decoration:none;padding:10px 0}
+.nav ul a:hover{color:var(--brass)}
+.nav .btn{min-height:42px;padding:0 18px;font-size:14px}
+.lang{display:flex;border:1px solid var(--line)}
+.lang button{border:0;background:none;font:400 13px Jost,sans-serif;width:38px;height:36px;cursor:pointer;color:var(--mute)}
+.lang button[aria-pressed=true]{background:var(--green);color:#f7f3ec}
+
+.hero{position:relative;min-height:min(calc(100svh - 62px),900px);display:flex;flex-direction:column;color:#f7f3ec;background:var(--green);overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(9,24,15,.55) 0%,rgba(9,24,15,.35) 40%,rgba(9,24,15,.8) 100%)}
+.hero .txt{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:72px max(5vw,18px) 48px;max-width:1100px;margin:0 auto}
+.hero .brand{display:flex;align-items:center;gap:14px;font-size:14px;font-weight:400;color:#e6dcc8;margin-bottom:26px}
+.hero .brand::before,.hero .brand::after{content:"";width:40px;height:1px;background:#cfaa6f}
+.hero h1{font-size:clamp(44px,7vw,104px);line-height:.98}
+.hero .lead{color:#e9e3d6;font-size:19px;max-width:56ch;margin:24px auto 0}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:34px}
+.hero .btn.solid{background:#f7f3ec;color:var(--green);border-color:#f7f3ec}
+.hero .btn.solid:hover{background:transparent;color:#f7f3ec}
+.hero .btn.line{color:#f7f3ec;border-color:#f7f3ec}
+.hero .btn.line:hover{background:#f7f3ec;color:var(--green)}
+.hero .proof{position:relative;z-index:2;background:rgba(9,24,15,.55);backdrop-filter:blur(6px);border-top:1px solid rgba(207,170,111,.35)}
+.welcome{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,6vw,90px);align-items:center}
+.collage{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:12px}
+.collage img{width:100%;height:100%;object-fit:cover}
+.collage img:first-child{grid-row:span 2;aspect-ratio:4/5}
+.collage img:not(:first-child){aspect-ratio:1}
+.sign{margin-top:22px;font-family:"Cormorant Garamond",serif;font-size:22px;color:var(--green)}
+.proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));color:#ede8dc}
+.proof div{padding:18px max(2vw,16px);text-align:center;border-right:1px solid rgba(207,170,111,.25);font-size:14px;color:#d9d3c5}
+.proof b{display:block;font-family:"Cormorant Garamond",serif;font-size:21px;font-weight:600;color:#f7f3ec;line-height:1.2}
+.proof div:last-child{border-right:0}
+
+.value{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,90px);align-items:center}
+.gains{display:grid;gap:12px;margin-top:24px;padding:0;list-style:none}
+.gains li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;font-size:16px}
+.gains svg{width:20px;height:20px;margin-top:3px;stroke:var(--green);fill:none;stroke-width:1.7}
+.gains b{font-weight:500}
+.chain{background:var(--paper);border:1px solid var(--line);padding:28px}
+.route+.route{margin-top:26px}
+.route .lbl{font-size:14px;font-weight:500;margin-bottom:10px}
+.route .lbl.muted{font-weight:300;color:var(--mute)}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.row i{font-style:normal;padding:8px 12px;border:1px solid var(--line);font-size:14px;background:var(--bg);white-space:nowrap}
+.row em{font-style:normal;color:var(--brass)}
+.us i{background:var(--green);color:#f7f3ec;border-color:var(--green)}
+.us i:last-child{background:var(--brass);border-color:var(--brass)}
+.bar{height:8px;margin-top:12px;background:#d4c6ac}
+.us .bar{background:var(--green);width:50%}
+.chain small{display:block;margin-top:18px;font-size:13px;color:var(--mute)}
+
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:32px}
+.arrows{display:flex;gap:8px}
+.arrows button{width:46px;height:46px;border:1px solid var(--ink);background:none;cursor:pointer;font-size:18px;color:var(--ink)}
+.arrows button:hover{background:var(--ink);color:var(--bg)}
+.strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin}
+.strip figure{flex:0 0 min(78vw,340px);scroll-snap-align:start;margin:0}
+.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--trav)}
+.strip figcaption{padding-top:12px;font-size:14px;color:var(--mute)}
+.strip figcaption b{display:block;font-family:"Cormorant Garamond",serif;font-size:21px;font-weight:600;color:var(--green)}
+.cats{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;align-items:center;font-size:14px}
+.cats b{font-weight:500;margin-right:4px}
+.cats span{border:1px solid var(--line);padding:6px 13px;background:var(--bg)}
+
+.green{background:var(--green);color:#ede8dc}
+.green .lead{color:#c3cdc2}
+.green .eyebrow{color:#cfaa6f}
+.custom{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,90px);align-items:center}
+.custom img{width:100%;aspect-ratio:1;object-fit:cover}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:26px 0 30px;border-top:1px solid #3b5b49}
+.opts div{padding:14px 14px 14px 0;border-bottom:1px solid #3b5b49;font-size:14px;color:#c3cdc2}
+.opts div:nth-child(even){padding-left:16px;border-left:1px solid #3b5b49}
+.opts b{display:block;font-family:"Cormorant Garamond",serif;font-size:21px;font-weight:600;color:#f7f3ec}
+
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;list-style:none;padding:0;margin:32px 0 0;counter-reset:s}
+.steps li{border-top:2px solid var(--green);padding-top:16px}
+.steps li::before{counter-increment:s;content:counter(s);display:block;font-family:"Cormorant Garamond",serif;font-size:36px;line-height:1;color:var(--brass);margin-bottom:8px}
+.steps b{display:block;font-family:"Cormorant Garamond",serif;font-size:23px;font-weight:600;margin-bottom:4px}
+.steps span{font-size:15px;color:var(--mute)}
+
+.aud{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:30px;border-top:1px solid var(--line)}
+.aud div{padding:20px 22px 4px 0;font-size:15px;color:var(--mute)}
+.aud div+div{padding-left:22px;border-left:1px solid var(--line)}
+.aud b{display:block;font-family:"Cormorant Garamond",serif;font-size:23px;font-weight:600;color:var(--green);margin-bottom:4px}
+
+.team{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,90px);align-items:start}
+.facts{display:grid;margin-top:26px;border-top:1px solid var(--line)}
+.facts div{display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr);gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.facts b{font-weight:500;color:var(--green)}
+.founders{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{background:var(--paper);border:1px solid var(--line)}
+.portrait{position:relative;aspect-ratio:4/5;background:linear-gradient(160deg,#1d4b33,#0f3320);display:grid;place-items:center;overflow:hidden}
+.portrait span{font-family:"Cormorant Garamond",serif;font-size:72px;color:#cfaa6f;letter-spacing:.02em}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;opacity:0;transition:opacity .4s}
+.portrait img.on{opacity:1}
+.card .t{padding:18px 20px 22px}
+.card .role{font-size:14px;color:var(--brass);font-weight:500;margin:2px 0 12px}
+.card .links{display:grid;gap:6px;font-size:15px}
+.card .links a{text-decoration:none;display:flex;align-items:center;gap:8px;min-height:32px}
+.card .links a:hover{color:var(--brass)}
+.card svg{width:17px;height:17px;flex:none;stroke:var(--green);fill:none;stroke-width:1.6}
+
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,90px)}
+.direct{display:grid;gap:14px;margin-top:28px;font-size:15px}
+.direct div{border-top:1px solid #3b5b49;padding-top:12px}
+.direct small{display:block;font-size:13px;color:#cfaa6f;font-weight:500}
+.direct a{text-decoration:none;border-bottom:1px solid #3b5b49;white-space:nowrap}
+form{background:var(--paper);color:var(--ink);padding:clamp(22px,3vw,36px);display:grid;gap:14px;align-content:start}
+label{display:grid;gap:5px;font-size:14px;font-weight:400}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+input,textarea{font:300 16px Jost,sans-serif;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:11px 13px;min-height:48px;width:100%;border-radius:0}
+textarea{min-height:110px;resize:vertical}
+.ok{display:none;background:var(--trav);padding:12px 14px;font-size:14px}
+.ok.on{display:block}
+.wa{position:fixed;right:18px;bottom:18px;z-index:40;width:56px;height:56px;border-radius:50%;background:var(--green);display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.18);border:1px solid #cfaa6f}
+.wa svg{width:26px;height:26px;stroke:#f7f3ec;fill:none;stroke-width:1.6}
+footer{background:#0a2416;color:#c3cdc2;font-size:14px;padding:30px max(5vw,18px)}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.foot img{height:48px;width:auto}
+.foot a{text-decoration:none}
+
+@media (prefers-reduced-motion:no-preference){.hero>img{animation:z 16s ease-out both}@keyframes z{from{transform:scale(1.06)}to{transform:scale(1)}}}
+@media(max-width:1000px){.nav ul{display:none}.nav .btn{margin-left:auto}.steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}.proof{grid-template-columns:repeat(2,minmax(0,1fr))}.proof div:nth-child(2){border-right:0}.proof div:nth-child(-n+2){border-bottom:1px solid rgba(207,170,111,.25)}}
+@media(max-width:820px){.value,.custom,.contact,.team,.welcome{grid-template-columns:minmax(0,1fr)}.hero{min-height:calc(100svh - 56px)}.custom img{aspect-ratio:16/11}}
+@media(max-width:600px){
+.nav .logo img{height:36px}.nav{gap:10px}.nav .btn{padding:0 14px;font-size:13px;min-height:40px}
+.hero h1{font-size:42px}.lead{font-size:16px}.hero .lead{font-size:16px}.hero .txt{padding:48px 18px 32px}.hero .cta .btn{flex:1 1 100%}.hero .brand::before,.hero .brand::after{width:20px}
+.proof div{padding:14px 10px}.proof b{font-size:18px}
+.chain{padding:20px}.row i{padding:7px 9px;font-size:13px}
+.arrows{display:none}.strip figure{flex-basis:74vw}
+.opts{grid-template-columns:minmax(0,1fr)}.opts div:nth-child(even){padding-left:0;border-left:0}
+.steps{grid-template-columns:minmax(0,1fr);gap:0}.steps li{display:grid;grid-template-columns:40px minmax(0,1fr);border-top:1px solid var(--line);padding:14px 0}.steps li::before{font-size:28px;margin:0}
+.aud{grid-template-columns:minmax(0,1fr)}.aud div,.aud div+div{padding:14px 0;border-left:0;border-bottom:1px solid var(--line)}
+.founders{gap:12px}.portrait span{font-size:48px}.card .t{padding:14px 12px 16px}.card h3{font-size:20px}.card .links{font-size:13px}
+.facts div{grid-template-columns:minmax(0,1fr);gap:0}
+.two{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:380px){.founders{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<header>
+  <nav class="nav" aria-label="Navigation">
+    <a class="logo" href="#top" aria-label="CoMiz — accueil"><img src="img/logo.png" alt="CoMiz Furniture Supply"></a>
+    <ul>
+      <li><a href="#pourquoi" data-i="n0">Pourquoi CoMiz</a></li>
+      <li><a href="#pieces" data-i="n1">Réalisations</a></li>
+      <li><a href="#sur-mesure" data-i="n2">Sur mesure</a></li>
+      <li><a href="#equipe" data-i="n3">Qui sommes-nous</a></li>
+      <li><a href="#contact" data-i="n4">Contact</a></li>
+    </ul>
+    <a class="btn solid" href="#contact" data-i="nb">Devis gratuit</a>
+    <div class="lang" role="group" aria-label="Langue"><button type="button" id="l-fr" aria-pressed="true">FR</button><button type="button" id="l-en" aria-pressed="false">EN</button></div>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <img src="img/living-sea.jpg" alt="Salon avec canapé bouclé et tables basses en travertin et laiton face à la mer">
+  <div class="txt">
+    <div class="brand" data-i="hb">CoMiz Global · Mobilier haut de gamme</div>
+    <h1 data-i="h1">Le mobilier des grandes maisons, sans leurs marges.</h1>
+    <p class="lead" data-i="hl">Nous faisons fabriquer sur mesure, en direct de nos ateliers partenaires, le mobilier de vos projets : canapés, tables, assises, tapis. Livré en France, en Europe et en Israël.</p>
+    <div class="cta">
+      <a class="btn solid" href="#contact" data-i="hb1">Recevoir un devis gratuit</a>
+      <a class="btn line" href="#pieces" data-i="hb2">Découvrir nos réalisations</a>
+    </div>
+  </div>
+  <div class="proof">
+    <div><b data-i="p1">Prix direct atelier</b><span data-i="p1s">Sans showroom ni distributeur</span></div>
+    <div><b data-i="p2">100 % sur mesure</b><span data-i="p2s">Dimensions, matières, couleurs</span></div>
+    <div><b data-i="p3">Qualité contrôlée</b><span data-i="p3s">Échantillons validés avec vous</span></div>
+    <div><b data-i="p4">Livraison gérée</b><span data-i="p4s">France, Europe, Israël</span></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap welcome">
+    <div>
+      <div class="eyebrow" data-i="we">Bienvenue chez CoMiz</div>
+      <h2 data-i="wh">Votre partenaire pour meubler des intérieurs d’exception.</h2>
+      <p class="lead" data-i="wl">CoMiz Global accompagne architectes, architectes d’intérieur et promoteurs. Vous nous confiez une idée, une référence ou un projet entier : nous trouvons les meilleurs ateliers, nous suivons la fabrication et nous livrons jusqu’à votre chantier.</p>
+      <p class="lead" data-i="wl2">Résultat : la qualité d’une grande marque, à un prix nettement plus juste.</p>
+      <div class="cta" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:26px"><a class="btn solid" href="#equipe" data-i="wb">Qui sommes-nous</a></div>
+    </div>
+    <div class="collage">
+      <img src="img/paris-velvet.jpg" alt="Salon parisien, canapé en velours vert" style="object-position:50% 80%">
+      <img src="img/travertine.jpg" alt="Tables basses en travertin et laiton brossé">
+      <img src="img/dining-terrace.jpg" alt="Table en chêne et fauteuils bouclés dans une villa" style="object-position:60% 75%">
+    </div>
+  </div>
+</section>
+
+<section class="band" id="pourquoi" style="padding-top:0">
+  <div class="wrap value">
+    <div>
+      <div class="eyebrow" data-i="ve">Pourquoi CoMiz</div>
+      <h2 data-i="vh">Vous payez la fabrication. Pas les intermédiaires.</h2>
+      <p class="lead" data-i="vl">Dans le mobilier haut de gamme, une grande partie du prix finance la marque, l’importateur et le showroom. Nous travaillons directement avec les ateliers, et nous gérons tout le reste.</p>
+      <ul class="gains">
+        <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg><span><b data-i="g1">Même niveau de finition</b> <span data-i="g1p">: bois massif, pierre naturelle, laiton, beaux tissus.</span></span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg><span><b data-i="g2">Un budget qui va plus loin</b> <span data-i="g2p">: meublez tout un projet là où vous auriez acheté quelques pièces.</span></span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg><span><b data-i="g3">Un seul interlocuteur</b> <span data-i="g3p">: du devis jusqu’à la livraison.</span></span></li>
+      </ul>
+    </div>
+    <div class="chain">
+      <div class="route"><div class="lbl muted" data-i="r1">Le circuit classique</div>
+        <div class="row"><i data-i="s1">Atelier</i><em>›</em><i data-i="s2">Marque</i><em>›</em><i data-i="s3">Importateur</i><em>›</em><i>Showroom</i><em>›</em><i data-i="s4">Vous</i></div><div class="bar"></div></div>
+      <div class="route us"><div class="lbl" data-i="r2">Avec CoMiz</div>
+        <div class="row"><i data-i="s5">Atelier</i><em>›</em><i>CoMiz</i><em>›</em><i data-i="s6">Vous</i></div><div class="bar"></div></div>
+      <small data-i="cn">Schéma indicatif. Devis établi pièce par pièce.</small>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="pieces" style="background:var(--paper);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow" data-i="me">Nos réalisations</div><h2 data-i="mh">Des pièces qui font la pièce.</h2></div>
+      <div class="arrows"><button type="button" id="prev" aria-label="Précédent">←</button><button type="button" id="next" aria-label="Suivant">→</button></div>
+    </div>
+    <div class="strip" id="strip" tabindex="0" aria-label="Réalisations">
+      <figure><img src="img/paris-velvet.jpg" alt="Canapé en velours vert dans un appartement haussmannien" style="object-position:50% 80%"><figcaption><b data-i="m1">Velours &amp; marbre</b><span data-i="m1p">Canapé modulable, fauteuil pivotant</span></figcaption></figure>
+      <figure><img src="img/travertine.jpg" alt="Tables basses en travertin et laiton"><figcaption><b data-i="m2">Travertin &amp; laiton</b><span data-i="m2p">Tables basses gigognes</span></figcaption></figure>
+      <figure><img src="img/dining-terrace.jpg" alt="Table en chêne et fauteuils bouclés" style="object-position:50% 70%"><figcaption><b data-i="m3">Salle à manger</b><span data-i="m3p">Table chêne, fauteuils bouclés</span></figcaption></figure>
+      <figure><img src="img/oak-tables.jpg" alt="Tables basses en chêne et bronze"><figcaption><b data-i="m4">Chêne &amp; bronze</b><span data-i="m4p">Tables basses, chaises en bois</span></figcaption></figure>
+      <figure><img src="img/peacock.jpg" alt="Fauteuil Paon en laiton et velours"><figcaption><b data-i="m5">Pièce signature</b><span data-i="m5p">Fauteuil Paon, laiton et velours</span></figcaption></figure>
+      <figure><img src="img/dining-walnut.jpg" alt="Table à manger en noyer cannelé et pierre"><figcaption><b data-i="m8">Noyer &amp; pierre</b><span data-i="m8p">Table à manger, pieds cannelés</span></figcaption></figure>
+      <figure><img src="img/gears.jpg" alt="Table basse en verre, laiton et engrenages"><figcaption><b data-i="m9">Pièce signature</b><span data-i="m9p">Table basse engrenages, laiton</span></figcaption></figure>
+      <figure><img src="img/loft.jpg" alt="Loft avec canapé lin et tables basses"><figcaption><b data-i="m6">Loft</b><span data-i="m6p">Canapé lin, tables chêne et travertin</span></figcaption></figure>
+    </div>
+    <div class="cats" id="cats"><b data-i="cb0">Nous fabriquons</b></div>
+  </div>
+</section>
+
+<section class="band green" id="sur-mesure">
+  <div class="wrap custom">
+    <img src="img/marble-tables.jpg" alt="Tables basses organiques en marbre blanc, bois et marbre noir vues du dessus">
+    <div>
+      <div class="eyebrow" data-i="ce">Sur mesure</div>
+      <h2 data-i="ch">Vous l’imaginez. Nous le faisons fabriquer.</h2>
+      <p class="lead" data-i="cl">Envoyez une inspiration, un croquis ou un plan. Nous trouvons l’atelier adapté, ajustons la pièce à votre espace et validons chaque détail avec vous avant production.</p>
+      <div class="opts">
+        <div><b data-i="o1">Dimensions</b><span data-i="o1p">Au centimètre près</span></div>
+        <div><b data-i="o2">Matériaux</b><span data-i="o2p">Bois, marbre, travertin, laiton</span></div>
+        <div><b data-i="o3">Finitions</b><span data-i="o3p">Teintes, laques, textures</span></div>
+        <div><b data-i="o4">Tissus</b><span data-i="o4p">Bouclé, velours, lin, cuir</span></div>
+      </div>
+      <a class="btn ivory" href="#contact" data-i="cb">Envoyer mon projet</a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="methode">
+  <div class="wrap">
+    <div class="eyebrow" data-i="pe">Comment ça marche</div>
+    <h2 data-i="ph">De votre idée à la livraison.</h2>
+    <ol class="steps">
+      <li><div><b data-i="a1">Votre brief</b><span data-i="a1p">Références, plans, quantités, budget et délais.</span></div></li>
+      <li><div><b data-i="a2">Devis &amp; échantillons</b><span data-i="a2p">Prix détaillé pièce par pièce, matières validées.</span></div></li>
+      <li><div><b data-i="a3">Fabrication suivie</b><span data-i="a3p">Plans techniques validés, contrôle avant départ.</span></div></li>
+      <li><div><b data-i="a4">Livraison</b><span data-i="a4p">Transport international et douane gérés.</span></div></li>
+    </ol>
+    <div class="aud">
+      <div><b data-i="u1">Architectes</b><span data-i="u1p">Vos dessins deviennent des pièces réelles.</span></div>
+      <div><b data-i="u2">Architectes d’intérieur</b><span data-i="u2p">Un sourcing fidèle à votre palette.</span></div>
+      <div><b data-i="u3">Promoteurs</b><span data-i="u3p">L’ameublement à l’échelle du programme.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="equipe" style="background:var(--trav)">
+  <div class="wrap team">
+    <div>
+      <div class="eyebrow" data-i="te">Qui sommes-nous</div>
+      <h2 data-i="th">Deux interlocuteurs, du premier échange à la livraison.</h2>
+      <p class="lead" data-i="tl">CoMiz Global est fondée par Elioth Mizrahi et Joseph Cohen. Nous travaillons avec un réseau d’ateliers et de partenaires logistiques sélectionnés, et nous suivons personnellement chaque projet.</p>
+      <div class="facts">
+        <div><b data-i="f1">Expérience</b><span data-i="f1p">Import et ameublement de plusieurs appartements en France.</span></div>
+        <div><b data-i="f2">Bureau</b><span>Ubora Office Tower, Business Bay, Dubaï</span></div>
+        <div><b data-i="f3">Projets</b><span data-i="f3p">France, Espagne, toute l’Europe et Israël</span></div>
+      </div>
+    </div>
+    <div class="founders">
+      <article class="card">
+        <div class="portrait"><span>EM</span><img data-src="img/elioth.jpg" alt="Elioth Mizrahi"></div>
+        <div class="t">
+          <h3>Elioth Mizrahi</h3>
+          <div class="role" data-i="r">Co-fondateur</div>
+          <div class="links">
+            <a href="tel:+972559755959"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg>+972 55 975 5959</a>
+            <a href="https://wa.me/972559755959"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1112 20a8 8 0 01-4-1z"/></svg>WhatsApp</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="portrait"><span>JC</span><img data-src="img/joseph.jpg" alt="Joseph Cohen"></div>
+        <div class="t">
+          <h3>Joseph Cohen</h3>
+          <div class="role" data-i="rj">Co-fondateur</div>
+          <div class="links">
+            <a href="tel:+972555002689"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg>+972 55 500 2689</a>
+            <a href="https://wa.me/972555002689"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1112 20a8 8 0 01-4-1z"/></svg>WhatsApp</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band green" id="contact">
+  <div class="wrap contact">
+    <div>
+      <div class="eyebrow" data-i="ke">Contact</div>
+      <h2 data-i="kh">Parlons de votre projet.</h2>
+      <p class="lead" data-i="kl">Envoyez-nous une image, un plan ou une liste de pièces. Nous revenons vers vous avec une proposition et un devis gratuit.</p>
+      <div class="direct">
+        <div><small>Email</small><a href="mailto:contact@comizglobal.com">contact@comizglobal.com</a></div>
+        <div><small>Elioth Mizrahi</small><a href="tel:+972559755959">+972 55 975 5959</a></div>
+        <div><small>Joseph Cohen</small><a href="tel:+972555002689">+972 55 500 2689</a></div>
+      </div>
+    </div>
+    <form id="f" novalidate>
+      <div class="two">
+        <label for="fn"><span data-i="x1">Nom</span><input id="fn" name="nom" autocomplete="name" required></label>
+        <label for="fc"><span data-i="x0">Société / studio</span><input id="fc" name="societe" autocomplete="organization"></label>
+      </div>
+      <div class="two">
+        <label for="fe"><span>Email</span><input id="fe" name="email" type="email" autocomplete="email" required></label>
+        <label for="fp"><span data-i="x2">Téléphone</span><input id="fp" name="telephone" type="tel" autocomplete="tel"></label>
+      </div>
+      <label for="fm"><span data-i="x3">Votre projet</span><textarea id="fm" name="message"></textarea></label>
+      <button class="btn solid" type="submit" data-i="xs">Envoyer ma demande</button>
+      <div class="ok" id="ok" role="status"></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<a class="wa" href="https://wa.me/972559755959" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1112 20a8 8 0 01-4-1z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1a4 4 0 01-2-2l1-1-1-2z"/></svg></a>
+<footer>
+  <div class="foot wrap">
+    <img src="img/logo-light.png" alt="CoMiz Furniture Supply">
+    <a href="mailto:contact@comizglobal.com">contact@comizglobal.com</a>
+    <span>Ubora Office Tower, Business Bay, Dubai</span>
+    <span>© 2026 CoMiz Global</span>
+  </div>
+</footer>
+
+<script>
+{
+const cats=[['Canapés','Sofas'],['Fauteuils','Armchairs'],['Tables basses','Coffee tables'],['Tables à manger','Dining tables'],['Chaises','Chairs'],['Lits','Beds'],['Rangements','Storage'],['Tapis','Rugs']];
+const EN={n0:'Why CoMiz',n1:'Projects',n2:'Made to measure',n3:'About us',n4:'Contact',nb:'Free quote',hb:'CoMiz Global · High-end furniture',h1:'The furniture of the great houses, without their margins.',hl:'We have the furniture for your projects made to measure, directly by our partner workshops: sofas, tables, seating, rugs. Delivered to France, across Europe and to Israel.',hb1:'Get a free quote',hb2:'Discover our work',we:'Welcome to CoMiz',wh:'Your partner for furnishing exceptional interiors.',wl:'CoMiz Global works with architects, interior designers and developers. Bring us an idea, a reference or a whole project: we find the best workshops, follow production and deliver to your site.',wl2:'The result: the quality of a major brand, at a much fairer price.',wb:'About us',m7:'Chenille & steel',m7p:'Three-seat sofa and armchair',m8:'Walnut & stone',m8p:'Dining table, fluted pedestals',m9:'Statement piece',m9p:'Gear coffee table, brass',
+p1:'Direct workshop pricing',p1s:'No showroom or distributor',p2:'Fully made to measure',p2s:'Dimensions, materials, colours',p3:'Quality checked',p3s:'Samples approved with you',p4:'Delivery handled',p4s:'France, Europe, Israel',
+ve:'Why CoMiz',vh:'You pay for the making. Not the middlemen.',vl:'In high-end furniture, much of the price pays for the brand, the importer and the showroom. We work directly with the workshops, and we handle everything else.',g1:'Same level of finish',g1p:': solid wood, natural stone, brass, fine fabrics.',g2:'A budget that goes further',g2p:': furnish a whole project where you would have bought a few pieces.',g3:'One point of contact',g3p:': from quote to delivery.',r1:'The usual route',s1:'Workshop',s2:'Brand',s3:'Importer',s4:'You',r2:'With CoMiz',s5:'Workshop',s6:'You',cn:'Illustrative diagram. Every quote is priced piece by piece.',
+me:'Our work',mh:'Pieces that make the room.',m1:'Velvet & marble',m1p:'Modular sofa, swivel armchair',m2:'Travertine & brass',m2p:'Nesting coffee tables',m3:'Dining',m3p:'Oak table, bouclé armchairs',m4:'Oak & bronze',m4p:'Coffee tables, wooden chairs',m5:'Statement piece',m5p:'Peacock chair, brass and velvet',m6:'Loft',m6p:'Linen sofa, oak and travertine tables',cb0:'We make',
+ce:'Made to measure',ch:'You imagine it. We have it made.',cl:'Send an inspiration, a sketch or a plan. We find the right workshop, adapt the piece to your space and confirm every detail with you before production.',o1:'Dimensions',o1p:'To the centimetre',o2:'Materials',o2p:'Wood, marble, travertine, brass',o3:'Finishes',o3p:'Stains, lacquers, textures',o4:'Fabrics',o4p:'Bouclé, velvet, linen, leather',cb:'Send my project',
+pe:'How it works',ph:'From your idea to delivery.',a1:'Your brief',a1p:'References, plans, quantities, budget and timeline.',a2:'Quote & samples',a2p:'Itemised price per piece, materials approved.',a3:'Production followed',a3p:'Technical drawings approved, checked before shipping.',a4:'Delivery',a4p:'International transport and customs handled.',u1:'Architects',u1p:'Your drawings become real pieces.',u2:'Interior designers',u2p:'Sourcing true to your palette.',u3:'Developers',u3p:'Furnishing at the scale of the project.',
+te:'About us',th:'Two people you can reach, from first call to delivery.',tl:'CoMiz Global was founded by Elioth Mizrahi and Joseph Cohen. We work with a network of selected workshops and logistics partners, and we follow every project personally.',f1:'Experience',f1p:'Import and furnishing of several apartments in France.',f2:'Office',f3:'Projects',f3p:'France, Spain, across Europe and Israel',f4:'Languages',f4p:'French, English, Hebrew',r:'Co-founder',rj:'Co-founder',
+ke:'Contact',kh:'Let’s talk about your project.',kl:'Send us an image, a plan or a list of pieces. We will come back to you with a proposal and a free quote.',x0:'Company / studio',x1:'Name',x2:'Phone',x3:'Your project',xs:'Send my request'};
+const FR={};
+document.querySelectorAll('[data-i]').forEach(e=>{FR[e.dataset.i]=e.textContent});
+const catsEl=document.getElementById('cats');
+let L='fr';
+function setLang(l){
+ L=l;document.documentElement.lang=l;
+ document.querySelectorAll('[data-i]').forEach(e=>{const k=e.dataset.i;e.textContent=l==='en'&&EN[k]?EN[k]:FR[k]});
+ catsEl.querySelectorAll('span').forEach(s=>s.remove());
+ catsEl.insertAdjacentHTML('beforeend',cats.map(c=>`<span>${c[l==='en'?1:0]}</span>`).join(''));
+ document.getElementById('l-fr').setAttribute('aria-pressed',l==='fr');
+ document.getElementById('l-en').setAttribute('aria-pressed',l==='en');
+ try{localStorage.setItem('comiz-lang',l)}catch(e){}
+}
+document.getElementById('l-fr').addEventListener('click',()=>setLang('fr'));
+document.getElementById('l-en').addEventListener('click',()=>setLang('en'));
+let start='fr';
+try{start=localStorage.getItem('comiz-lang')||((navigator.language||'fr').startsWith('fr')?'fr':'en')}catch(e){}
+setLang(start);
+
+/* founder photos: shown as soon as img/elioth.jpg and img/joseph.jpg exist, initials otherwise */
+document.querySelectorAll('.portrait img[data-src]').forEach(im=>{im.addEventListener('load',()=>im.classList.add('on'));im.src=im.dataset.src});
+
+const strip=document.getElementById('strip');
+const step=()=>strip.querySelector('figure').getBoundingClientRect().width+16;
+document.getElementById('prev').addEventListener('click',()=>strip.scrollBy({left:-step(),behavior:'smooth'}));
+document.getElementById('next').addEventListener('click',()=>strip.scrollBy({left:step(),behavior:'smooth'}));
+strip.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();strip.scrollBy({left:step(),behavior:'smooth'})}if(e.key==='ArrowLeft'){e.preventDefault();strip.scrollBy({left:-step(),behavior:'smooth'})}});
+
+const form=document.getElementById('f'),ok=document.getElementById('ok');
+form.addEventListener('submit',e=>{
+ e.preventDefault();
+ const d=new FormData(form),en=L==='en';
+ if(!d.get('nom')||!d.get('email')){ok.textContent=en?'Please add your name and email.':'Merci d’indiquer votre nom et votre email.';ok.classList.add('on');return}
+ const body=[...d.entries()].map(([k,v])=>`${k}: ${v}`).join('\n');
+ ok.textContent=en?'Your email app will open with your message ready. If not, write to contact@comizglobal.com.':'Votre messagerie va s’ouvrir avec le message prêt. Sinon, écrivez à contact@comizglobal.com.';
+ ok.classList.add('on');
+ location.href='mailto:contact@comizglobal.com?subject='+encodeURIComponent((en?'Quote request — ':'Demande de devis — ')+d.get('nom'))+'&body='+encodeURIComponent(body);
+});
+}
+</script>
+</body>
+</html>
